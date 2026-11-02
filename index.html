@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nilai Praktikum APSI 2026</title>
+    <style>
+      :root {
+        --bg: #f3f5f8;
+        --card: #fff;
+        --ink: #16213a;
+        --mute: #5b6679;
+        --line: #dde2ea;
+        --acc: #0f6b66;
+        --accbg: #e3f3f1;
+        --err: #b42318;
+        --me: #fff7d6;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #10151f;
+          --card: #18202e;
+          --ink: #e8ecf3;
+          --mute: #9aa6bb;
+          --line: #2b3547;
+          --acc: #4fd1c5;
+          --accbg: #173a3a;
+          --err: #ff8a80;
+          --me: #3a3416;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          15px/1.55 system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 16px 56px;
+      }
+      h1,
+      h2 {
+        margin: 0;
+        line-height: 1.2;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 20px;
+      }
+      #loginView {
+        max-width: 420px;
+        margin: 8vh auto 0;
+      }
+      #loginView h1 {
+        font-size: 22px;
+        margin-bottom: 4px;
+      }
+      .sub {
+        color: var(--mute);
+        margin: 0 0 18px;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin: 14px 0 4px;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink);
+      }
+      input:focus-visible,
+      select:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--acc);
+        outline-offset: 1px;
+      }
+      button {
+        cursor: pointer;
+        background: var(--acc);
+        border-color: var(--acc);
+        color: #fff;
+        font-weight: 600;
+        margin-top: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        button {
+          color: #08201f;
+        }
+      }
+      button.ghost {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line);
+        width: auto;
+        margin: 0;
+        padding: 7px 12px;
+        font-weight: 500;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: wait;
+      }
+      .err {
+        color: var(--err);
+        margin: 12px 0 0;
+        min-height: 1.2em;
+      }
+      .top {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .top h1 {
+        font-size: 22px;
+      }
+      .meta {
+        color: var(--mute);
+        margin: 4px 0 0;
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+      }
+      .grade {
+        display: flex;
+        gap: 28px;
+        margin: 18px 0;
+        flex-wrap: wrap;
+      }
+      .grade div {
+        min-width: 120px;
+      }
+      .grade span {
+        display: block;
+        color: var(--mute);
+        font-size: 13px;
+      }
+      .grade b {
+        font:
+          700 44px/1.1 Georgia,
+          "Times New Roman",
+          serif;
+      }
+      .tabs {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        margin-bottom: 12px;
+      }
+      .tabs button {
+        width: auto;
+        margin: 0;
+        white-space: nowrap;
+        padding: 7px 14px;
+        background: var(--card);
+        color: var(--ink);
+        border-color: var(--line);
+        font-weight: 500;
+      }
+      .tabs button[aria-selected="true"] {
+        background: var(--acc);
+        border-color: var(--acc);
+        color: #fff;
+      }
+      @media (prefers-color-scheme: dark) {
+        .tabs button[aria-selected="true"] {
+          color: #08201f;
+        }
+      }
+      h2 {
+        font-size: 17px;
+        margin: 0 0 12px;
+      }
+      .kv {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 10px;
+      }
+      .kv div {
+        background: var(--accbg);
+        border-radius: 8px;
+        padding: 10px 12px;
+      }
+      .kv span {
+        display: block;
+        font-size: 12.5px;
+        color: var(--mute);
+      }
+      .kv b {
+        font-size: 17px;
+        word-break: break-word;
+      }
+      .group {
+        margin-top: 22px;
+      }
+      .wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+      }
+      th,
+      td {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: var(--accbg);
+        font-weight: 600;
+        min-width: 90px;
+      }
+      tr:last-child td {
+        border-bottom: 0;
+      }
+      tr.me td {
+        background: var(--me);
+        font-weight: 600;
+      }
+      .foot {
+        color: var(--mute);
+        font-size: 13px;
+        margin-top: 14px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="loginView" class="card">
+        <h1>Nilai Praktikum APSI</h1>
+        <p class="sub">
+          Masuk dengan data praktikan untuk melihat nilai dan nilai kelompokmu.
+        </p>
+        <form id="form" autocomplete="off">
+          <label for="plug">Plug</label>
+          <select id="plug" required></select>
+          <label for="nim">NIM</label>
+          <input id="nim" inputmode="numeric" required />
+          <label for="nama">Nama lengkap</label>
+          <input id="nama" required />
+          <p class="err" id="err" role="alert"></p>
+          <button id="btnMasuk" type="submit">Lihat nilai</button>
+        </form>
+      </section>
+
+      <section id="dashView" hidden>
+        <div class="top">
+          <div>
+            <h1 id="dNama"></h1>
+            <p class="meta" id="dMeta"></p>
+          </div>
+          <div class="actions">
+            <button class="ghost" id="btnRefresh" type="button">
+              Muat ulang
+            </button>
+            <button class="ghost" id="btnKeluar" type="button">Keluar</button>
+          </div>
+        </div>
+        <div class="grade" id="grade"></div>
+        <div class="tabs" id="tabs" role="tablist"></div>
+        <div class="card" id="panel"></div>
+        <p class="foot" id="foot"></p>
+      </section>
+    </main>
+
+    <script>
+      // ====== GANTI DENGAN URL WEB APP DARI APPS SCRIPT ======
+      const API_URL =
+        "https://script.google.com/macros/s/AKfycbzbQ9fspHzJWtCcst1PNt5OjQf3XaTzggkLmUiYQa72d3PWodhWuCoXWUs_QSel3TlG/exec";
+      // =======================================================
+
+      const $ = (id) => document.getElementById(id);
+      const PLUGS = "ABCDEFGHIKLMNOPQRS".split(""); // tidak ada J
+      let state = { data: null, tab: 0 };
+
+      PLUGS.forEach((p) => $("plug").append(new Option("Plug " + p, p)));
+
+      function el(tag, cls, ...kids) {
+        const e = document.createElement(tag);
+        if (cls) e.className = cls;
+        kids.flat().forEach((k) => {
+          if (k != null) e.append(k.nodeType ? k : document.createTextNode(k));
+        });
+        return e;
+      }
+
+      async function ambil(plug, nim, nama) {
+        const url = API_URL + "?" + new URLSearchParams({ plug, nim, nama });
+        const res = await fetch(url);
+        return res.json();
+      }
+
+      async function masuk(cred, diam) {
+        $("err").textContent = "";
+        $("btnMasuk").disabled = true;
+        $("btnRefresh").disabled = true;
+        try {
+          const d = await ambil(cred.plug, cred.nim, cred.nama);
+          if (!d.ok) throw new Error(d.message);
+          sessionStorage.setItem("apsi", JSON.stringify(cred));
+          state.data = d;
+          if (!diam) state.tab = 0;
+          gambar();
+        } catch (e) {
+          if (diam) alert("Gagal memuat ulang: " + e.message);
+          else {
+            sessionStorage.removeItem("apsi");
+            $("loginView").hidden = false;
+            $("dashView").hidden = true;
+            $("err").textContent =
+              e.message === "Failed to fetch"
+                ? "Tidak dapat terhubung ke server. Coba lagi."
+                : e.message;
+          }
+        } finally {
+          $("btnMasuk").disabled = false;
+          $("btnRefresh").disabled = false;
+        }
+      }
+
+      $("form").addEventListener("submit", (ev) => {
+        ev.preventDefault();
+        masuk(
+          {
+            plug: $("plug").value,
+            nim: $("nim").value.trim(),
+            nama: $("nama").value.trim(),
+          },
+          false,
+        );
+      });
+      $("btnRefresh").onclick = () =>
+        masuk(JSON.parse(sessionStorage.getItem("apsi")), true);
+      $("btnKeluar").onclick = () => {
+        sessionStorage.removeItem("apsi");
+        state.data = null;
+        $("dashView").hidden = true;
+        $("loginView").hidden = false;
+        $("nama").value = "";
+      };
+
+      function cari(sheets, re) {
+        for (const s of sheets) {
+          const i = s.headers.findIndex((h) => re.test(h.trim()));
+          const me = s.rows.find((r) => r.me);
+          if (i >= 0 && me && me.v[i]) return me.v[i];
+        }
+        return "";
+      }
+
+      function gambar() {
+        const { user, sheets, updated } = state.data;
+        $("loginView").hidden = true;
+        $("dashView").hidden = false;
+        $("dNama").textContent = user.nama;
+        $("dMeta").textContent =
+          "NIM " +
+          user.nim +
+          " · Plug " +
+          user.plug +
+          (user.kelompok ? " · Kelompok " + user.kelompok : "");
+
+        const na = cari(sheets, /^nilai akhir$/i),
+          hk = cari(sheets, /^hakikat$/i);
+        const g = $("grade");
+        g.replaceChildren();
+        if (na)
+          g.append(
+            el("div", "", el("span", "", "Nilai akhir"), el("b", "", na)),
+          );
+        if (hk)
+          g.append(el("div", "", el("span", "", "Hakikat"), el("b", "", hk)));
+
+        const tabs = $("tabs");
+        tabs.replaceChildren();
+        sheets.forEach((s, i) => {
+          const b = el("button", "", s.name);
+          b.type = "button";
+          b.setAttribute("role", "tab");
+          b.setAttribute("aria-selected", i === state.tab);
+          b.onclick = () => {
+            state.tab = i;
+            gambar();
+          };
+          tabs.append(b);
+        });
+        panel(sheets[state.tab]);
+        $("foot").textContent =
+          "Data dibaca langsung dari spreadsheet pada " +
+          new Date(updated).toLocaleString("id-ID") +
+          '. Tekan "Muat ulang" untuk data terbaru.';
+      }
+
+      function panel(s) {
+        const p = $("panel");
+        p.replaceChildren();
+        const me = s.rows.find((r) => r.me);
+        p.append(el("h2", "", s.name + " — nilaimu"));
+        const kv = el("div", "kv");
+        s.headers.forEach((h, i) => {
+          if (me.v[i])
+            kv.append(el("div", "", el("span", "", h), el("b", "", me.v[i])));
+        });
+        p.append(
+          kv.children.length
+            ? kv
+            : el("p", "sub", "Belum ada nilai pada bagian ini."),
+        );
+
+        if (s.rows.length > 1) {
+          const cols = s.headers
+            .map((h, i) => i)
+            .filter((i) => s.rows.some((r) => r.v[i]));
+          const g = el("div", "group", el("h2", "", "Kelompokmu"));
+          const t = el("table");
+          t.append(
+            el(
+              "thead",
+              "",
+              el(
+                "tr",
+                "",
+                el("th", "", "Nama"),
+                cols.map((i) => el("th", "", s.headers[i])),
+              ),
+            ),
+          );
+          const tb = el("tbody");
+          s.rows.forEach((r) =>
+            tb.append(
+              el(
+                "tr",
+                r.me ? "me" : "",
+                el("td", "", r.nama),
+                cols.map((i) => el("td", "", r.v[i])),
+              ),
+            ),
+          );
+          t.append(tb);
+          g.append(el("div", "wrap", t));
+          p.append(g);
+        }
+      }
+
+      const tersimpan = sessionStorage.getItem("apsi");
+      if (tersimpan) masuk(JSON.parse(tersimpan), false);
+    </script>
+  </body>
+</html>
