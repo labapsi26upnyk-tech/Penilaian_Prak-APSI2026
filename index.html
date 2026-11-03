@@ -133,8 +133,8 @@ details.grup>summary{color:var(--blue);font-weight:600;padding:14px 0}
 .seg button{border:0;background:none;padding:6px 16px;border-radius:999px;color:var(--mute);font-weight:500}
 .seg button[aria-pressed=true]{background:var(--o1);color:#fff}
 .sel{width:auto;border:0;background:#e9ebef;border-radius:999px;padding:8px 14px;font-weight:500}
-.rkg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));column-gap:44px}
-.rk{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.rkg{columns:2 420px;column-gap:44px}
+.rk{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);break-inside:avoid}
 .rk .no{font-weight:700;color:var(--o1);font-size:1.2em}
 .empty{padding:28px 0;color:var(--mute)}
 @media(min-width:1180px){
