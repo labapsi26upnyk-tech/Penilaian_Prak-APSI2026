@@ -9,20 +9,20 @@
 <style>
 :root{--o1:#f26a1b;--o2:#ff9d42;--od:#b83e07;--navy:#13263f;--blue:#1f6f8b;--bg:#f4f5f7;--ink:#1b2433;--mute:#667085;--line:#e7e9ee}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.55 Poppins,system-ui,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:clamp(14px,.3vw + 11px,16.5px)/1.55 Poppins,system-ui,sans-serif}
 button{font:inherit;cursor:pointer}
 button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--o1);outline-offset:2px}
 [hidden]{display:none!important}
 h1,h2,h3,p{margin:0}
-small{color:var(--mute);font-size:12.5px}
+small{color:var(--mute);font-size:.86em}
 .mute{color:var(--mute)}
 .n{text-align:right}
 /* login */
 .lg{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr}
-.lgl{background:linear-gradient(150deg,var(--od),var(--o1) 55%,var(--o2));color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:flex-end}
-.lgl h1{font-size:42px;line-height:1.1;margin-bottom:10px}
-.lgr{display:grid;place-items:center;padding:32px}
-form{width:100%;max-width:360px}
+.lgl{background:linear-gradient(150deg,var(--od),var(--o1) 55%,var(--o2));color:#fff;padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;justify-content:flex-end}
+.lgl h1{font-size:clamp(30px,3.4vw,48px);line-height:1.1;margin-bottom:10px}
+.lgr{display:grid;place-items:center;padding:32px 20px}
+form{width:100%;max-width:380px}
 form h2{font-size:22px;margin-bottom:4px}
 label{display:block;font-weight:600;margin:14px 0 4px}
 input,select{width:100%;padding:11px 13px;border:1px solid #cfd4dc;border-radius:10px;font:inherit;background:#fff}
@@ -30,88 +30,100 @@ input,select{width:100%;padding:11px 13px;border:1px solid #cfd4dc;border-radius
 .go:disabled{opacity:.6;cursor:wait}
 .err{color:#b42318;min-height:1.4em;margin-top:10px}
 /* kerangka */
-.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.app{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}
 aside{background:linear-gradient(170deg,var(--o1),var(--od));color:#fff;border-radius:0 28px 28px 0;padding:24px 16px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
 .brand{font-weight:700;font-size:20px;padding:0 10px 22px}
 .brand small{display:block;font-weight:400;font-size:11.5px;opacity:.85;color:#fff}
+.mbtn{display:none;background:rgba(255,255,255,.2);border:0;color:#fff;border-radius:10px;padding:8px 16px;font-weight:600}
 nav{display:flex;flex-direction:column;gap:4px;flex:1}
 .ni{background:none;border:0;color:#fff;text-align:left;padding:11px 14px;border-radius:12px;width:100%;font-weight:500}
 .ni:hover{background:rgba(255,255,255,.2)}
 .ni.on{background:#fff;color:var(--od);font-weight:600}
-.out{margin-top:auto;border:1px solid rgba(255,255,255,.5)}
+.out{margin-top:auto;border:1px solid rgba(255,255,255,.5);text-align:center}
 .has-sub{position:relative}
-.sub{display:none;position:absolute;left:calc(100% - 4px);top:-4px;z-index:20;background:#fff;color:var(--ink);border-radius:14px;box-shadow:0 12px 32px rgba(19,38,63,.25);padding:8px;width:240px}
-.has-sub:hover .sub,.has-sub.open .sub{display:block}
+.sub{display:none;position:absolute;left:calc(100% - 4px);top:-4px;z-index:20;background:#fff;color:var(--ink);border-radius:14px;box-shadow:0 12px 32px rgba(19,38,63,.25);padding:8px;width:250px}
+.has-sub.open .sub{display:block}
+@media(hover:hover){.has-sub:hover .sub{display:block}}
 .sub button{display:flex;justify-content:space-between;gap:8px;width:100%;background:none;border:0;padding:9px 12px;border-radius:9px;text-align:left}
 .sub button:hover,.sub button.on{background:#fff1e8;color:var(--od)}
-main{padding:28px 32px 60px;max-width:1120px;width:100%}
+main{padding:clamp(16px,2.4vw,36px) clamp(16px,2.6vw,40px) 60px;max-width:1800px;width:100%;min-width:0}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
-.top h1{font-size:22px}
+.top h1{font-size:clamp(19px,1.6vw,24px)}
 .ghost{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;color:var(--ink)}
+.tag{font-size:11px;background:#fff1e8;color:var(--od);border-radius:999px;padding:2px 9px;margin-left:8px;font-weight:600;vertical-align:middle}
 /* banner */
-.hero{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;padding:26px 28px;border-radius:22px;background:linear-gradient(120deg,var(--o1),var(--o2));color:#fff;margin-bottom:22px}
-.hero h2{font-size:24px;margin:2px 0}
-.hero p{font-size:13px;opacity:.95}
-.hs{display:flex;gap:34px}
+.hero{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;padding:clamp(18px,2vw,30px) clamp(18px,2.2vw,32px);border-radius:22px;background:linear-gradient(120deg,var(--o1),var(--o2));color:#fff;margin-bottom:22px}
+.hero h2{font-size:clamp(20px,1.8vw,26px);margin:2px 0}
+.hero p{font-size:.9em;opacity:.95}
+.hs{display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap}
 .hs div{text-align:right}
 .hs small{display:block;color:#fff;opacity:.9}
-.hs b{font-size:32px;line-height:1.15}
+.hs b{font-size:clamp(24px,2.4vw,34px);line-height:1.15}
 .asisten{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.2);padding:10px 20px 10px 10px;border-radius:999px}
 .asisten small{display:block;color:#fff;opacity:.9}
 .foto{width:54px;height:54px;border-radius:50%;background:#fff;color:var(--od);display:grid;place-items:center;font-weight:700;overflow:hidden;flex:none}
 .foto img{width:100%;height:100%;object-fit:cover}
 /* panel */
-.panel{background:#fff;border-radius:20px;padding:8px 24px 10px;border:1px solid var(--line)}
+.panel{background:#fff;border-radius:20px;padding:8px clamp(16px,1.6vw,24px) 10px;border:1px solid var(--line);min-width:0}
 .ph{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 0 10px}
-.ph h3,.sh h3{font-size:17px;color:var(--navy);border-left:4px solid var(--o1);padding-left:10px}
-.grid2{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:stretch;margin-bottom:22px}
-.grade{background:var(--navy);color:#fff;border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;justify-content:space-around;text-align:center;gap:18px}
-.grade small{color:#fff;opacity:.75;display:block}
-.grade .n1{font-size:60px;font-weight:700;line-height:1.1;color:var(--o2)}
-.grade .n2{font-size:60px;font-weight:700;line-height:1.1}
-.grade .n3{font-size:26px;font-weight:600}
+.ph h3,.sh h3{font-size:1.1em;color:var(--navy);border-left:4px solid var(--o1);padding-left:10px}
+/* beranda: [nilai akhir | komponen] [info plug + peringkat] */
+.home{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,390px);gap:22px;min-height:max(740px,calc(100vh - 210px))}
+.home.solo{grid-template-columns:minmax(0,1fr);min-height:0}
+.hl{display:grid;grid-template-columns:clamp(220px,19vw,290px) minmax(0,1fr);gap:22px}
+.hl .panel{display:flex;flex-direction:column}
+.hl .row{flex:1}
+.hr{position:relative;min-width:0}
+.hri{position:absolute;inset:0;display:flex;flex-direction:column;gap:22px}
+.hri .panel{min-height:0}
+.hri .rank{flex:1;display:flex;flex-direction:column}
+.grade{background:var(--navy);color:#fff;border-radius:22px;padding:28px 20px;display:flex;flex-direction:column;justify-content:space-around;text-align:center;gap:18px}
+.grade small{color:#fff;opacity:.75;display:block;margin-bottom:4px}
+.grade .n1{font-size:clamp(44px,4vw,68px);font-weight:700;line-height:1.1;color:var(--o2)}
+.grade .n2{font-size:clamp(44px,4vw,68px);font-weight:700;line-height:1.1}
+.grade .n3{font-size:clamp(20px,1.8vw,28px);font-weight:600}
 .grade hr{border:0;border-top:1px solid rgba(255,255,255,.2);width:100%;margin:0}
-.row{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
 .row:last-child{border:0}
-.big{font-size:20px;font-weight:700;color:var(--od)}
-.kv{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
-.kv b{font-weight:600}
-.pj{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
-.pj:last-child{border:0}
+.row b,.kr b,.rk b{font-weight:600;display:block}
+.row small,.kr small,.rk small{display:block;margin-top:4px}
+.big{font-size:1.4em;font-weight:700;color:var(--od)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.stats div{padding:12px 4px;text-align:center}
+.stats b{display:block;font-size:1.25em;font-weight:700;color:var(--navy);line-height:1.2}
+.pj{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
 .pj .foto{width:44px;height:44px;background:#fff1e8}
-.tag{font-size:11px;background:#fff1e8;color:var(--od);border-radius:999px;padding:2px 9px;margin-left:6px;font-weight:600}
-.rkl{columns:2 280px;column-gap:36px;padding-bottom:6px}
-.ri{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:10px 6px;border-bottom:1px solid var(--line);break-inside:avoid}
+.pj b{font-weight:600}
+.rkl{overflow:auto;flex:1;min-height:0;padding-bottom:6px}
+.ri{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:10px 8px;border-bottom:1px solid var(--line)}
 .ri .no{font-weight:700;color:var(--mute)}
 .ri.t3 .no{color:var(--od)}
 .ri.me{background:#fff4ec;border-radius:10px;font-weight:600}
 /* komponen */
-.sek{padding-bottom:8px}
+.sek{padding-bottom:8px;min-width:0}
 .sek+.sek{border-top:1px solid var(--line);margin-top:8px}
 .sh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:18px 0 10px}
 .sh .tot{text-align:right}
-.sh .tot b{font-size:24px;color:var(--od);line-height:1.1;display:block}
+.sh .tot b{font-size:1.5em;color:var(--od);line-height:1.1;display:block}
 .th,.kr,.sr{display:grid;grid-template-columns:1fr 90px 90px 22px;gap:12px;align-items:center}
 .tw2 .th,.tw2 .kr{grid-template-columns:1fr 90px 22px}
-.th{font-size:11.5px;color:var(--mute);padding:6px 0;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.05em}
+.th{font-size:.78em;color:var(--mute);padding:6px 0;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.05em}
 .komp{border-bottom:1px solid var(--line)}
 .komp:last-child{border:0}
-.kr{padding:15px 0}
-.kr b{font-weight:600}
-.kr small{display:block}
+.kr{padding:16px 0}
 summary{list-style:none;cursor:pointer}
 summary::-webkit-details-marker{display:none}
 .chev{width:8px;height:8px;border:solid var(--mute);border-width:0 2px 2px 0;transform:rotate(45deg);transition:.2s;justify-self:center}
 details[open]>summary .chev{transform:rotate(-135deg)}
-details[open]>summary{background:#fff8f3;margin:0 -12px;padding:15px 12px;border-radius:10px}
-.subs{margin:6px 0 16px 6px;padding:2px 0 4px 16px;border-left:3px solid var(--o2);font-size:13px}
+details[open]>summary{background:#fff8f3;margin:0 -12px;padding:16px 12px;border-radius:10px}
+.subs{margin:6px 0 16px 6px;padding:2px 0 4px 16px;border-left:3px solid var(--o2);font-size:.9em}
 .sr{padding:8px 0;border-bottom:1px dashed var(--line)}
-.sr.h{color:var(--mute);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em}
+.sr.h{color:var(--mute);font-size:.8em;text-transform:uppercase;letter-spacing:.05em}
 .sr.t{font-weight:700;border:0;color:var(--od)}
-.cat{padding:12px 0;color:var(--mute);font-size:13px}
+.cat{padding:12px 0;color:var(--mute);font-size:.92em}
 details.grup>summary{color:var(--blue);font-weight:600;padding:14px 0}
 .sc{overflow-x:auto;padding-bottom:8px}
-.tb{width:100%;border-collapse:collapse;font-size:13px}
+.tb{width:100%;border-collapse:collapse;font-size:.9em}
 .tb th{color:var(--mute);font-weight:500;padding:8px;text-align:right;white-space:nowrap}
 .tb td{padding:9px 8px;text-align:right;border-top:1px solid var(--line)}
 .tb th:first-child,.tb td:first-child{text-align:left}
@@ -121,23 +133,38 @@ details.grup>summary{color:var(--blue);font-weight:600;padding:14px 0}
 .seg button{border:0;background:none;padding:6px 16px;border-radius:999px;color:var(--mute);font-weight:500}
 .seg button[aria-pressed=true]{background:var(--o1);color:#fff}
 .sel{width:auto;border:0;background:#e9ebef;border-radius:999px;padding:8px 14px;font-weight:500}
-.rk{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
-.rk:last-child{border:0}
-.rk .no{font-weight:700;color:var(--o1);font-size:18px}
-.rk b{font-weight:600}
-.rk small{display:block}
+.rkg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));column-gap:44px}
+.rk{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.rk .no{font-weight:700;color:var(--o1);font-size:1.2em}
 .empty{padding:28px 0;color:var(--mute)}
+@media(min-width:1180px){
+ .dua{display:grid;grid-template-columns:1fr 1fr;column-gap:44px;align-items:start}
+ .dua>.sek+.sek{border-top:0;margin-top:0}
+ .dua>.full{grid-column:1/-1}
+ .dua>.sek.full{border-top:1px solid var(--line);margin-top:8px}
+}
+@media(max-width:1280px){
+ .home{grid-template-columns:minmax(0,1fr);min-height:0}
+ .hr{position:static}
+ .hri{position:static;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+ .rkl{max-height:440px}
+}
 @media(max-width:860px){
- .lg{grid-template-columns:1fr}.lgl{padding:32px;min-height:220px}.lgl h1{font-size:30px}
+ .lg{grid-template-columns:1fr}.lgl{min-height:200px}
  .app{display:block}
- aside{position:static;height:auto;border-radius:0 0 22px 22px;padding:14px}
- .brand{padding-bottom:10px}
- nav{flex-direction:row;flex-wrap:wrap}.ni{width:auto;padding:8px 12px}.out{margin:0}
- .sub{left:0;top:100%}
- main{padding:20px 16px 48px}.grid2{grid-template-columns:1fr}
- .hs{gap:20px}.hs b{font-size:26px}
- .th,.kr,.sr{grid-template-columns:1fr 64px 64px 18px;gap:8px}
- .tw2 .th,.tw2 .kr{grid-template-columns:1fr 70px 18px}
+ aside{position:sticky;top:0;z-index:30;height:auto;max-height:100vh;overflow:auto;border-radius:0 0 22px 22px;padding:12px 16px}
+ .brandrow{display:flex;justify-content:space-between;align-items:center}
+ .brand{padding:0}
+ .mbtn{display:block}
+ nav{display:none;padding-top:12px;flex:none}
+ aside.open nav{display:flex}
+ .sub{position:static;width:100%;margin-top:4px;box-shadow:none}
+ .out{margin-top:8px}
+ .hl,.hri{grid-template-columns:1fr}
+ .th,.kr,.sr{grid-template-columns:1fr 62px 66px 18px;gap:8px}
+ .tw2 .th,.tw2 .kr{grid-template-columns:1fr 72px 18px}
+ .hs div{text-align:left}
+ .row{padding:16px 0}
 }
 </style>
 </head>
@@ -152,28 +179,31 @@ details.grup>summary{color:var(--blue);font-weight:600;padding:14px 0}
   <div class="lgr">
     <form id="form" autocomplete="off">
       <h2>Masuk</h2>
-      <p class="mute">Gunakan data praktikan yang sesuai.</p>
+      <p class="mute">Gunakan data praktikan untuk melihat nilaimu.</p>
       <label for="plug">Plug</label><select id="plug" required></select>
-     <label for="nama">Nama lengkap</label><input id="nama" required>
       <label for="nim">NIM</label><input id="nim" inputmode="numeric" required>
-            <p class="err" id="err" role="alert"></p>
+      <label for="nama">Nama lengkap</label><input id="nama" required>
+      <p class="err" id="err" role="alert"></p>
       <button class="go" id="go" type="submit">Lihat nilai</button>
     </form>
   </div>
 </div>
 
 <div class="app" id="app" hidden>
-  <aside>
-    <div class="brand">APSI<small>Dashboard nilai praktikan</small></div>
+  <aside id="side">
+    <div class="brandrow">
+      <div class="brand">APSI<small>Dashboard nilai praktikan</small></div>
+      <button class="mbtn" id="mbtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
     <nav id="nav"></nav>
   </aside>
   <main id="main"></main>
 </div>
 
 <script>
-// ====== GANTI DENGAN URL WEB APP DARI APPS SCRIPT ======
+// ====== GANTI DENGAN URL WEB APP DARI APPS SCRIPT (berakhiran /exec) ======
 const API_URL = 'https://script.google.com/macros/s/AKfycbzbQ9fspHzJWtCcst1PNt5OjQf3XaTzggkLmUiYQa72d3PWodhWuCoXWUs_QSel3TlG/exec';
-// =======================================================
+// =========================================================================
 
 const $ = id => document.getElementById(id);
 const PLUGS = 'ABCDEFGHIKLMNOPQRS'.split('');            // tidak ada J
@@ -188,8 +218,18 @@ const DESC = {
   'asistensi':'Penilaian saat sesi asistensi', 'laporan sementara':'Laporan hasil praktikum modul',
   'responsi tulis (ets)':'Ujian tulis', 'presentasi (eas)':'Presentasi dan tanya jawab', 'laporan resmi':'Laporan akhir project'
 };
+// kode & warna asisten (nama dalam huruf kecil)
+const KODE = {
+  'pratama surya dinata':['SY','#1e00ff'], 'muhammad ikhsan nur ardhiansyah':['IN','#041d56'], 'yulia rahayu simatupang':['YS','#6c3303'],
+  'lucky setiawan salim':['KY','#2fd0da'], 'yanisa riskifitrianova sukowati':['YA','#ffd966'], 'adelia nashwa rakhili':['AN','#c40160'],
+  'alkayyisa hibatillah hasanin':['AH','#38761d'], 'tanasya zalza bela firzty':['TZ','#dd9b9b'], 'ira alivia kardiana':['AV','#c8d9e6'],
+  'akbar jalu kuncoro':['AB','#c7b7f7']
+};
 let D = null, view = 'home', rm = { m: 'kuis', s: 'urut' };
-PLUGS.forEach(p => $('plug').append(new Option('Plug ' + p, p)));
+(function () {
+  const s = $('plug'); s.append(new Option('Pilih plug', '', true, true)); s.options[0].disabled = true;
+  PLUGS.forEach(p => s.append(new Option('Plug ' + p, p)));
+})();
 
 function el(tag, cls, ...kids) {
   const e = document.createElement(tag);
@@ -206,11 +246,28 @@ const bobot = h => { const m = h.match(/(\d+(?:[.,]\d+)?)\s*%/); return m ? pars
 const own = t => t.rows.find(r => r.me);
 
 // ---------- login ----------
+async function panggil(c) {
+  if (!API_URL || API_URL.indexOf('GANTI') >= 0) throw new Error('API_URL di index.html belum diisi dengan URL Web App.');
+  const ctl = new AbortController(), to = setTimeout(() => ctl.abort(), 60000);
+  let teks;
+  try {
+    const r = await fetch(API_URL + '?' + new URLSearchParams(c), { signal: ctl.signal });
+    teks = await r.text();
+  } catch (e) {
+    throw new Error(e.name === 'AbortError'
+      ? 'Server terlalu lama merespons (lebih dari 60 detik). Coba lagi.'
+      : 'Server tidak bisa dihubungi. Periksa URL Web App di index.html dan pastikan akses deployment "Siapa saja".');
+  } finally { clearTimeout(to); }
+  let d;
+  try { d = JSON.parse(teks); }
+  catch (e) { throw new Error('Server mengirim halaman, bukan data. Pastikan URL berakhiran /exec, akses "Siapa saja", dan kode Apps Script tidak error.'); }
+  if (d.ok && !d.tabs) throw new Error('Backend masih versi lama. Di Apps Script: Deploy, Kelola deployment, Versi baru.');
+  return d;
+}
 async function masuk(c, reload) {
   $('err').textContent = ''; $('go').disabled = true;
   try {
-    const r = await fetch(API_URL + '?' + new URLSearchParams(c));
-    const d = await r.json();
+    const d = await panggil(c);
     if (!d.ok) throw new Error(d.message);
     sessionStorage.setItem('apsi', JSON.stringify(c));
     D = d; if (!reload) view = 'home';
@@ -220,7 +277,7 @@ async function masuk(c, reload) {
     else {
       sessionStorage.removeItem('apsi');
       $('login').hidden = false; $('app').hidden = true;
-      $('err').textContent = e.message === 'Failed to fetch' ? 'Tidak dapat terhubung ke server. Coba lagi.' : e.message;
+      $('err').textContent = e.message;
     }
   } finally { $('go').disabled = false; }
 }
@@ -229,6 +286,7 @@ $('form').addEventListener('submit', ev => {
   masuk({ plug: $('plug').value, nim: $('nim').value.trim(), nama: $('nama').value.trim() }, false);
 });
 function keluar() { sessionStorage.removeItem('apsi'); D = null; $('app').hidden = true; $('login').hidden = false; $('nama').value = ''; }
+$('mbtn').onclick = () => { const o = $('side').classList.toggle('open'); $('mbtn').setAttribute('aria-expanded', o); };
 
 // ---------- komponen & sub komponen ----------
 function parseKomp(t, mainRe, endRe) {
@@ -255,11 +313,12 @@ function subTabel(subs, me) {
     el('div', 'sr t', el('span', '', 'Nilai komponen'), el('span'), el('span', 'n', fmt(total)), el('span')));
 }
 
-// sw = total bobot satu seksi (bobot ditampilkan relatif terhadap seksi); tanpa sw = bobot apa adanya
-function komp(m, me, sw) {
+// sw = total bobot satu seksi (bobot relatif); sinB = tanpa kolom bobot (mode 2 kolom)
+function komp(m, me, sw, sinB) {
   const val = num(me.v[m.i]), subs = m.subs.filter(s => (me.v[s.i] || '') !== '');
   const bw = isNaN(m.w) ? NaN : (sw ? m.w / sw * 100 : m.w), ds = DESC[base(m.label)];
-  const head = [el('div', '', el('b', '', m.label), ds ? el('small', '', ds) : null), el('span', 'n', isNaN(bw) ? '–' : fmt(bw) + '%'), el('span', 'n big', fmt(val)), subs.length ? el('span', 'chev') : el('span')];
+  const head = [el('div', '', el('b', '', m.label), ds ? el('small', '', ds) : null),
+    sinB ? null : el('span', 'n', isNaN(bw) ? '–' : fmt(bw) + '%'), el('span', 'n big', fmt(val)), subs.length ? el('span', 'chev') : el('span')];
   if (!subs.length) return el('div', 'komp', el('div', 'kr', head));
   return el('details', 'komp', el('summary', 'kr', head), subTabel(subs, me));
 }
@@ -287,7 +346,11 @@ function heroBand(kicker, title, stats) {
 // ---------- beranda ----------
 function foto(a) {
   const ph = el('div', 'foto'), img = new Image(); let coba = 0;
-  const ini = () => ph.replaceChildren(a.nama.split(' ').slice(0, 2).map(x => x[0]).join(''));
+  const k = KODE[a.nama.toLowerCase().replace(/[^a-z ]/g, '').replace(/\s+/g, ' ').trim()];
+  const ini = () => {
+    ph.replaceChildren(k ? k[0] : a.nama.split(' ').slice(0, 2).map(x => x[0]).join(''));
+    if (k) { const c = parseInt(k[1].slice(1), 16), L = .299 * (c >> 16) + .587 * (c >> 8 & 255) + .114 * (c & 255); ph.style.background = k[1]; ph.style.color = L > 150 ? '#1b2433' : '#fff'; }
+  };
   img.alt = a.nama;
   img.onerror = () => { if (!coba) { coba = 1; img.src = 'foto/' + a.nim + '.png'; } else ini(); };
   if (a.nim) { img.src = 'foto/' + a.nim + '.jpg'; ph.append(img); } else ini();
@@ -299,11 +362,10 @@ function infoPlug() {
   const I = D.info, u = D.user, p = el('section', 'panel');
   const nilai = I.ranking.map(x => num(x.na)).filter(x => !isNaN(x));
   const rata = nilai.length ? nilai.reduce((a, b) => a + b, 0) / nilai.length : NaN;
-  const kv = (a, b) => el('div', 'kv', el('span', 'mute', a), el('b', '', b));
+  const st = (a, b) => el('div', '', el('b', '', b), el('small', '', a));
   p.append(el('div', 'ph', el('h3', '', 'Informasi Plug ' + u.plug)),
-    kv('Total praktikan', I.ranking.length), kv('Laki-laki', I.laki), kv('Perempuan', I.perempuan), kv('Jumlah kelompok', I.kelompok),
-    kv('Rata-rata nilai akhir', fmt(rata)), kv('Nilai tertinggi', fmt(nilai.length ? Math.max(...nilai) : NaN)),
-    el('div', 'ph', el('h3', '', 'Asisten')));
+    el('div', 'stats', st('Praktikan', I.ranking.length), st('Laki-laki', I.laki), st('Perempuan', I.perempuan),
+      st('Kelompok', I.kelompok), st('Rata-rata', fmt(rata)), st('Tertinggi', fmt(nilai.length ? Math.max(...nilai) : NaN))));
   [1, 2].forEach(n => {
     const a = D.asisten && D.asisten[n]; if (!a) return;
     const rentang = n === 1 ? 'Kelompok 1–' + Math.min(3, I.kelompok) : (I.kelompok >= 4 ? 'Kelompok 4–' + I.kelompok : '');
@@ -313,10 +375,9 @@ function infoPlug() {
 }
 
 function peringkat() {
-  const I = D.info, p = el('section', 'panel');
-  p.append(el('div', 'ph', el('h3', '', 'Peringkat Plug ' + D.user.plug), el('small', '', 'Berdasarkan nilai akhir')),
+  const I = D.info;
+  return el('section', 'panel rank', el('div', 'ph', el('h3', '', 'Peringkat Plug ' + D.user.plug), el('small', '', 'Berdasarkan nilai akhir')),
     el('div', 'rkl', I.ranking.map(x => el('div', 'ri' + (x.me ? ' me' : '') + (x.r <= 3 ? ' t3' : ''), el('span', 'no', x.r), el('span', '', x.nama), el('span', '', fmt(num(x.na)), x.hk ? el('small', '', '  ' + x.hk) : null)))));
-  return p;
 }
 
 function beranda() {
@@ -332,19 +393,19 @@ function beranda() {
   const rows = [];
   defs.forEach(d => {
     const c = cari(d[0]); if (!c) return;
-    rows.push(el('div', 'row', el('div', '', el('b', '', d[1]), el('small', '', d[2] + (isNaN(c.w) ? '' : ' · bobot ' + fmt(c.w) + '%')), ), el('span', 'big', c.v === '' ? '–' : fmt(num(c.v)))));
+    rows.push(el('div', 'row', el('div', '', el('b', '', d[1]), el('small', '', d[2] + (isNaN(c.w) ? '' : ' · bobot ' + fmt(c.w) + '%'))), el('span', 'big', c.v === '' ? '–' : fmt(num(c.v)))));
   });
   const pt = cari('poin tambahan'), aw = cari('nilai awal'), na = cari('nilai akhir'), hk = cari('hakikat');
   rows.push(el('div', 'row', el('div', '', el('b', '', 'Poin tambahan'), el('small', '', 'Nilai tambahan dari asisten')), el('span', 'big', pt && pt.v !== '' ? '+' + fmt(num(pt.v)) : '0')));
   if (aw) rows.push(el('div', 'row', el('b', '', 'Nilai awal'), el('span', 'big', fmt(num(aw.v)))));
   const mine = D.info && D.info.ranking.find(x => x.me);
-  w.append(el('div', 'grid2',
+  const kiri = el('div', 'hl',
     el('div', 'grade',
       el('div', '', el('small', '', 'Nilai akhir'), el('div', 'n1', na ? fmt(num(na.v)) : '–')), el('hr'),
       el('div', '', el('small', '', 'Hakikat'), el('div', 'n2', hk && hk.v ? hk.v : '–')),
       mine ? [el('hr'), el('div', '', el('small', '', 'Peringkat di Plug ' + u.plug), el('div', 'n3', mine.r + ' dari ' + D.info.ranking.length))] : null),
-    el('section', 'panel', el('div', 'ph', el('h3', '', 'Komponen Nilai')), rows)));
-  if (D.info) w.append(el('div', 'grid2', infoPlug(), peringkat()));
+    el('section', 'panel', el('div', 'ph', el('h3', '', 'Komponen Nilai')), rows));
+  w.append(el('div', 'home' + (D.info ? '' : ' solo'), kiri, D.info ? el('div', 'hr', el('div', 'hri', infoPlug(), peringkat())) : null));
   return w;
 }
 
@@ -367,14 +428,14 @@ function acaraView(a) {
   const modul = ACARA[a].length > 1 ? 'Modul ' + ACARA[a].join(' & ') : 'Modul ' + n;
   w.append(heroBand('Acara ' + a + ' · ' + modul, JUDUL_ACARA[a], [q != null ? ['Nilai kuis', num(me.v[q])] : null, g != null ? ['Nilai tugas', num(me.v[g])] : null]));
   const kuis = K.mains.filter(m => /^(pretest|tugas modul)/.test(base(m.label))), tugas = K.mains.filter(m => /^(asistensi|laporan sementara)/.test(base(m.label)));
-  const p = el('section', 'panel');
+  const p = el('section', 'panel dua');
   if (kuis.length) p.append(seksi('Kuis', kuis, q != null ? num(me.v[q]) : NaN, me));
   if (tugas.length) p.append(seksi('Tugas', tugas, g != null ? num(me.v[g]) : NaN, me));
-  if (c != null && me.v[c]) p.append(el('p', 'cat', 'Catatan asisten: ' + me.v[c]));
+  if (c != null && me.v[c]) p.append(el('p', 'cat full', 'Catatan asisten: ' + me.v[c]));
   const cols = K.mains.map(m => [m.label, m.i]);
   if (q != null) cols.push(['Kuis', q]); if (g != null) cols.push(['Tugas', g]);
   const gt = grupTabel(t, cols);
-  if (gt) p.append(el('div', 'sek', gt));
+  if (gt) p.append(el('div', 'sek full', gt));
   w.append(p);
   return w;
 }
@@ -385,9 +446,11 @@ function responsiView() {
   if (!t) { w.append(el('section', 'panel', el('p', 'empty', 'Data responsi belum tersedia.'))); return w; }
   const K = parseKomp(t, /^(responsi tulis|presentasi)/, /^catatan/), me = own(t);
   w.append(heroBand('Responsi', 'ETS & EAS', K.mains.map(m => [m.label.replace(/\s*\(.*\)/, '') + ' (' + (m.label.match(/\((.*)\)/) || ['', ''])[1] + ')', num(me.v[m.i])])));
-  const p = el('section', 'panel', el('div', 'sh', el('h3', '', 'Komponen Responsi')),
-    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Bobot'), el('span', 'n', 'Nilai'), el('span')), K.mains.map(m => komp(m, me)));
-  const ci = K.extra['catatan']; if (ci != null && me.v[ci]) p.append(el('p', 'cat', 'Catatan asisten: ' + me.v[ci]));
+  const p = el('section', 'panel dua');
+  K.mains.forEach(m => p.append(el('section', 'sek',
+    el('div', 'sh', el('h3', '', m.label.match(/\((.*)\)/) ? m.label.match(/\((.*)\)/)[1] : m.label)),
+    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Bobot'), el('span', 'n', 'Nilai'), el('span')), komp(m, me))));
+  const ci = K.extra['catatan']; if (ci != null && me.v[ci]) p.append(el('p', 'cat full', 'Catatan asisten: ' + me.v[ci]));
   w.append(p);
   return w;
 }
@@ -399,7 +462,7 @@ function projectView() {
   const me = own(t), idx = re => t.headers.findIndex(h => re.test(base(h))), val = i => i < 0 ? NaN : num(me.v[i]);
   const iPB = idx(/^nilai akhir project based/), iTB = idx(/^nilai akhir tugas besar/), iLR = idx(/^nilai akhir laporan resmi/);
   w.append(heroBand('Project Based', 'Tugas Besar & Laporan Resmi', [['Nilai akhir project based', val(iPB)], ['Tugas besar', val(iTB)], ['Laporan resmi', val(iLR)]]));
-  const p = el('section', 'panel tw2');
+  const p = el('section', 'panel tw2 dua');
   const items = [];
   t.headers.forEach((h, i) => {
     if (!/^(use ?case|dfd|erd|flowchart|dbms|pengujian|ux|website|ux website)$/.test(base(h))) return;
@@ -409,10 +472,9 @@ function projectView() {
     el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Nilai'), el('span')), items));
   const iRaw = idx(/^laporan resmi$/), subs = [];
   t.headers.forEach((h, i) => { if (/^(format & kerapian|kualitas pembahasan|tata tulis)/.test(base(h))) subs.push({ label: judul(h), w: bobot(h), i }); });
-  const lw = el('section', 'sek', el('div', 'sh', el('h3', '', 'Laporan Resmi'), el('div', 'tot', el('small', '', 'Nilai akhir · bobot ' + fmt(bobot(t.headers[iLR] || '')) + '%'), el('b', '', fmt(val(iLR))))),
-    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Nilai'), el('span')));
-  lw.append(komp({ label: 'Laporan resmi', w: NaN, i: iRaw >= 0 ? iRaw : iLR, subs }, me));
-  p.append(lw);
+  p.append(el('section', 'sek', el('div', 'sh', el('h3', '', 'Laporan Resmi'), el('div', 'tot', el('small', '', 'Nilai akhir · bobot ' + fmt(bobot(t.headers[iLR] || '')) + '%'), el('b', '', fmt(val(iLR))))),
+    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Nilai'), el('span')),
+    komp({ label: 'Laporan resmi', w: NaN, i: iRaw >= 0 ? iRaw : iLR, subs }, me, 0, true)));
   w.append(p);
   return w;
 }
@@ -429,7 +491,7 @@ function rekapView() {
     else { const m = b.match(/^modul\s*(\d+)/); if (m && g) G[g][+m[1]] = i; }
   });
   w.append(heroBand('Rekap', 'Rekap Nilai', [tot.kuis != null ? ['Keseluruhan kuis', num(me.v[tot.kuis])] : null, tot.tugas != null ? ['Keseluruhan tugas', num(me.v[tot.tugas])] : null]));
-  const list = el('div'), ctl = el('div', 'ctl'), seg = el('div', 'seg');
+  const list = el('div', 'rkg'), ctl = el('div', 'ctl'), seg = el('div', 'seg');
   [['kuis', 'Kuis'], ['tugas', 'Tugas']].forEach(o => {
     const b = el('button', '', o[1]); b.type = 'button'; b.setAttribute('aria-pressed', rm.m === o[0]);
     b.onclick = () => { rm.m = o[0]; [...seg.children].forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); };
@@ -441,9 +503,9 @@ function rekapView() {
   ctl.append(seg, sel);
   function draw() {
     const items = Object.keys(JUDUL_ACARA).map(a => {
-      let v = NaN, n = ACARA[a][0];
-      ACARA[a].forEach(x => { if (isNaN(v) && G[rm.m][x] != null) { const y = num(me.v[G[rm.m][x]]); if (!isNaN(y)) { v = y; n = x; } } });
-      return { a: +a, v, n };
+      let v = NaN;
+      ACARA[a].forEach(x => { if (isNaN(v) && G[rm.m][x] != null) { const y = num(me.v[G[rm.m][x]]); if (!isNaN(y)) v = y; } });
+      return { a: +a, v };
     });
     if (rm.s === 'urut') items.sort((x, y) => x.a - y.a);
     else if (rm.s === 'baik') items.sort((x, y) => (isNaN(y.v) ? -1 : y.v) - (isNaN(x.v) ? -1 : x.v));
@@ -478,10 +540,10 @@ function nav() {
 }
 
 function tampil() {
-  $('login').hidden = true; $('app').hidden = false; nav();
+  $('login').hidden = true; $('app').hidden = false; $('side').classList.remove('open'); $('mbtn').setAttribute('aria-expanded', 'false'); nav();
   const r = el('button', 'ghost', 'Muat ulang'); r.onclick = () => masuk(JSON.parse(sessionStorage.getItem('apsi')), true);
   const body = view === 'home' ? beranda() : isAcara() ? acaraView(+view.slice(1)) : view === 'responsi' ? responsiView() : view === 'project' ? projectView() : rekapView();
-  $('main').replaceChildren(el('div', 'top', el('h1', '', isAcara() ? 'Acara ' + view.slice(1) : JUDUL[view]), r), body);
+  $('main').replaceChildren(el('div', 'top', el('h1', '', isAcara() ? 'Acara ' + view.slice(1) : JUDUL[view], D.mode === 'asisten' ? el('span', 'tag', 'Mode asisten') : null), r), body);
   window.scrollTo(0, 0);
 }
 
