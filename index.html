@@ -13,7 +13,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.55 Poppins,sys
 button{font:inherit;cursor:pointer}
 button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--o1);outline-offset:2px}
 [hidden]{display:none!important}
-h1,h2,p{margin:0}
+h1,h2,h3,p{margin:0}
+small{color:var(--mute);font-size:12.5px}
+.mute{color:var(--mute)}
+.n{text-align:right}
 /* login */
 .lg{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr}
 .lgl{background:linear-gradient(150deg,var(--od),var(--o1) 55%,var(--o2));color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:flex-end}
@@ -26,12 +29,11 @@ input,select{width:100%;padding:11px 13px;border:1px solid #cfd4dc;border-radius
 .go{width:100%;margin-top:18px;background:var(--o1);color:#fff;border:0;border-radius:10px;padding:12px;font-weight:600}
 .go:disabled{opacity:.6;cursor:wait}
 .err{color:#b42318;min-height:1.4em;margin-top:10px}
-.mute{color:var(--mute)}
 /* kerangka */
 .app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
 aside{background:linear-gradient(170deg,var(--o1),var(--od));color:#fff;border-radius:0 28px 28px 0;padding:24px 16px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
 .brand{font-weight:700;font-size:20px;padding:0 10px 22px}
-.brand small{display:block;font-weight:400;font-size:11.5px;opacity:.85}
+.brand small{display:block;font-weight:400;font-size:11.5px;opacity:.85;color:#fff}
 nav{display:flex;flex-direction:column;gap:4px;flex:1}
 .ni{background:none;border:0;color:#fff;text-align:left;padding:11px 14px;border-radius:12px;width:100%;font-weight:500}
 .ni:hover{background:rgba(255,255,255,.2)}
@@ -42,71 +44,88 @@ nav{display:flex;flex-direction:column;gap:4px;flex:1}
 .has-sub:hover .sub,.has-sub.open .sub{display:block}
 .sub button{display:flex;justify-content:space-between;gap:8px;width:100%;background:none;border:0;padding:9px 12px;border-radius:9px;text-align:left}
 .sub button:hover,.sub button.on{background:#fff1e8;color:var(--od)}
-.sub small{color:var(--mute)}
-main{padding:28px 32px 60px;max-width:1100px;width:100%}
+main{padding:28px 32px 60px;max-width:1120px;width:100%}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
 .top h1{font-size:22px}
 .ghost{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;color:var(--ink)}
-/* beranda */
+/* banner */
 .hero{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;padding:26px 28px;border-radius:22px;background:linear-gradient(120deg,var(--o1),var(--o2));color:#fff;margin-bottom:22px}
 .hero h2{font-size:24px;margin:2px 0}
-.hero .sm{opacity:.9;font-size:13px}
+.hero p{font-size:13px;opacity:.95}
+.hs{display:flex;gap:34px}
+.hs div{text-align:right}
+.hs small{display:block;color:#fff;opacity:.9}
+.hs b{font-size:32px;line-height:1.15}
 .asisten{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.2);padding:10px 20px 10px 10px;border-radius:999px}
-.asisten small{display:block;opacity:.9;font-size:12px}
+.asisten small{display:block;color:#fff;opacity:.9}
 .foto{width:54px;height:54px;border-radius:50%;background:#fff;color:var(--od);display:grid;place-items:center;font-weight:700;overflow:hidden;flex:none}
 .foto img{width:100%;height:100%;object-fit:cover}
-.split{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start}
-.panel{background:#fff;border-radius:20px;padding:6px 24px;border:1px solid var(--line)}
-.row{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+/* panel */
+.panel{background:#fff;border-radius:20px;padding:8px 24px 10px;border:1px solid var(--line)}
+.ph{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 0 10px}
+.ph h3,.sh h3{font-size:17px;color:var(--navy);border-left:4px solid var(--o1);padding-left:10px}
+.grid2{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:stretch;margin-bottom:22px}
+.grade{background:var(--navy);color:#fff;border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;justify-content:space-around;text-align:center;gap:18px}
+.grade small{color:#fff;opacity:.75;display:block}
+.grade .n1{font-size:60px;font-weight:700;line-height:1.1;color:var(--o2)}
+.grade .n2{font-size:60px;font-weight:700;line-height:1.1}
+.grade .n3{font-size:26px;font-weight:600}
+.grade hr{border:0;border-top:1px solid rgba(255,255,255,.2);width:100%;margin:0}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}
 .row:last-child{border:0}
-.row small{color:var(--mute);display:block}
-.row .r{text-align:right}
 .big{font-size:20px;font-weight:700;color:var(--od)}
-.grade{background:var(--navy);color:#fff;border-radius:22px;padding:28px;text-align:center}
-.grade span{opacity:.75;font-size:13px;display:block}
-.grade .n{font-size:64px;font-weight:700;line-height:1.1;color:var(--o2);margin-bottom:18px}
-.grade .h{font-size:64px;font-weight:700;line-height:1.1;border-top:1px solid rgba(255,255,255,.2);padding-top:18px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.kv b{font-weight:600}
+.pj{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.pj:last-child{border:0}
+.pj .foto{width:44px;height:44px;background:#fff1e8}
+.tag{font-size:11px;background:#fff1e8;color:var(--od);border-radius:999px;padding:2px 9px;margin-left:6px;font-weight:600}
+.rkl{columns:2 280px;column-gap:36px;padding-bottom:6px}
+.ri{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:10px 6px;border-bottom:1px solid var(--line);break-inside:avoid}
+.ri .no{font-weight:700;color:var(--mute)}
+.ri.t3 .no{color:var(--od)}
+.ri.me{background:#fff4ec;border-radius:10px;font-weight:600}
 /* komponen */
+.sek{padding-bottom:8px}
+.sek+.sek{border-top:1px solid var(--line);margin-top:8px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:18px 0 10px}
+.sh .tot{text-align:right}
+.sh .tot b{font-size:24px;color:var(--od);line-height:1.1;display:block}
+.th,.kr,.sr{display:grid;grid-template-columns:1fr 90px 90px 22px;gap:12px;align-items:center}
+.tw2 .th,.tw2 .kr{grid-template-columns:1fr 90px 22px}
+.th{font-size:11.5px;color:var(--mute);padding:6px 0;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.05em}
 .komp{border-bottom:1px solid var(--line)}
 .komp:last-child{border:0}
-.kh{display:grid;grid-template-columns:1fr auto 18px;gap:6px 12px;align-items:center;padding:16px 0}
-.kh .kv{font-size:20px;font-weight:700;color:var(--od)}
-.kw{font-size:12px;color:var(--mute);margin-left:8px;font-weight:400}
+.kr{padding:15px 0}
+.kr b{font-weight:600}
+.kr small{display:block}
 summary{list-style:none;cursor:pointer}
 summary::-webkit-details-marker{display:none}
 .chev{width:8px;height:8px;border:solid var(--mute);border-width:0 2px 2px 0;transform:rotate(45deg);transition:.2s;justify-self:center}
 details[open]>summary .chev{transform:rotate(-135deg)}
-.bar{grid-column:1/-1;height:6px;background:#eef0f3;border-radius:6px;overflow:hidden}
-.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--o1),var(--o2));border-radius:6px}
-.subs{margin:0 0 16px 6px;padding:2px 0 4px 16px;border-left:3px solid var(--o2);font-size:13px}
-.sr{display:grid;grid-template-columns:1fr 66px 48px 52px 70px;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line)}
-.sr.h{color:var(--mute);font-size:12px}
+details[open]>summary{background:#fff8f3;margin:0 -12px;padding:15px 12px;border-radius:10px}
+.subs{margin:6px 0 16px 6px;padding:2px 0 4px 16px;border-left:3px solid var(--o2);font-size:13px}
+.sr{padding:8px 0;border-bottom:1px dashed var(--line)}
+.sr.h{color:var(--mute);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em}
 .sr.t{font-weight:700;border:0;color:var(--od)}
-.n{text-align:right}
-.mod{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 24px 14px;margin-bottom:22px}
-.mh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:flex-end;border-bottom:2px solid var(--o1);padding-bottom:12px}
-.mh h2{font-size:18px}
-.st{display:flex;gap:22px}
-.st small{display:block;color:var(--mute);font-size:12px}
-.st b{font-size:18px}
-.cat{margin:12px 0 0;color:var(--mute);font-size:13px}
-details.grup{padding:12px 0 6px}
-details.grup>summary{color:var(--blue);font-weight:600}
-.sc{overflow-x:auto;margin-top:8px}
+.cat{padding:12px 0;color:var(--mute);font-size:13px}
+details.grup>summary{color:var(--blue);font-weight:600;padding:14px 0}
+.sc{overflow-x:auto;padding-bottom:8px}
 .tb{width:100%;border-collapse:collapse;font-size:13px}
 .tb th{color:var(--mute);font-weight:500;padding:8px;text-align:right;white-space:nowrap}
 .tb td{padding:9px 8px;text-align:right;border-top:1px solid var(--line)}
 .tb th:first-child,.tb td:first-child{text-align:left}
 .tb .me td{background:#fff4ec;font-weight:600}
-.sec{font-size:13px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin:22px 0 4px}
-.ctl{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .seg{display:flex;background:#e9ebef;border-radius:999px;padding:3px}
-.seg button{border:0;background:none;padding:6px 14px;border-radius:999px;color:var(--mute);font-weight:500}
+.seg button{border:0;background:none;padding:6px 16px;border-radius:999px;color:var(--mute);font-weight:500}
 .seg button[aria-pressed=true]{background:var(--o1);color:#fff}
-.rk{display:grid;grid-template-columns:34px 1fr auto;gap:4px 12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.sel{width:auto;border:0;background:#e9ebef;border-radius:999px;padding:8px 14px;font-weight:500}
+.rk{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
 .rk:last-child{border:0}
-.rk .no{width:28px;height:28px;border-radius:50%;background:#fff1e8;color:var(--od);font-weight:600;display:grid;place-items:center;font-size:12px}
-.rk .bar{grid-column:2/-1}
+.rk .no{font-weight:700;color:var(--o1);font-size:18px}
+.rk b{font-weight:600}
+.rk small{display:block}
 .empty{padding:28px 0;color:var(--mute)}
 @media(max-width:860px){
  .lg{grid-template-columns:1fr}.lgl{padding:32px;min-height:220px}.lgl h1{font-size:30px}
@@ -115,7 +134,10 @@ details.grup>summary{color:var(--blue);font-weight:600}
  .brand{padding-bottom:10px}
  nav{flex-direction:row;flex-wrap:wrap}.ni{width:auto;padding:8px 12px}.out{margin:0}
  .sub{left:0;top:100%}
- main{padding:20px 16px 48px}.split{grid-template-columns:1fr}
+ main{padding:20px 16px 48px}.grid2{grid-template-columns:1fr}
+ .hs{gap:20px}.hs b{font-size:26px}
+ .th,.kr,.sr{grid-template-columns:1fr 64px 64px 18px;gap:8px}
+ .tw2 .th,.tw2 .kr{grid-template-columns:1fr 70px 18px}
 }
 </style>
 </head>
@@ -130,11 +152,11 @@ details.grup>summary{color:var(--blue);font-weight:600}
   <div class="lgr">
     <form id="form" autocomplete="off">
       <h2>Masuk</h2>
-      <p class="mute">Gunakan data praktikan untuk melihat nilaimu.</p>
+      <p class="mute">Gunakan data praktikan yang sesuai.</p>
       <label for="plug">Plug</label><select id="plug" required></select>
+     <label for="nama">Nama lengkap</label><input id="nama" required>
       <label for="nim">NIM</label><input id="nim" inputmode="numeric" required>
-      <label for="nama">Nama lengkap</label><input id="nama" required>
-      <p class="err" id="err" role="alert"></p>
+            <p class="err" id="err" role="alert"></p>
       <button class="go" id="go" type="submit">Lihat nilai</button>
     </form>
   </div>
@@ -150,12 +172,22 @@ details.grup>summary{color:var(--blue);font-weight:600}
 
 <script>
 // ====== GANTI DENGAN URL WEB APP DARI APPS SCRIPT ======
-const API_URL = 'https://script.google.com/macros/library/d/1L8TnyChBjB0_TET7WSs8PGAkkQr7ChB2rhYWHp7Z7V1oN9-3YlMRE_yn/2';
+const API_URL = 'https://script.google.com/macros/library/d/1L8TnyChBjB0_TET7WSs8PGAkkQr7ChB2rhYWHp7Z7V1oN9-3YlMRE_yn/3';
 // =======================================================
 
 const $ = id => document.getElementById(id);
 const PLUGS = 'ABCDEFGHIKLMNOPQRS'.split('');            // tidak ada J
 const ACARA = {1:[1,2],2:[3],3:[4],4:[5],5:[6],6:[7],7:[8],8:[9],9:[10]};
+const JUDUL_ACARA = {
+  1:'Analisis dan Kebutuhan Sistem Informasi & Data Flow Diagram', 2:'Entity Relationship Diagram',
+  3:'Flowchart dan Database Management System', 4:'Desain User Interface', 5:'Desain User Experience',
+  6:'Pengujian Sistem Informasi', 7:'Arsitektur Sistem Informasi', 8:'Website', 9:'Manajemen Proyek Sistem Informasi'
+};
+const DESC = {
+  'pretest':'Tes awal sebelum praktikum', 'tugas modul':'Pengerjaan tugas modul',
+  'asistensi':'Penilaian saat sesi asistensi', 'laporan sementara':'Laporan hasil praktikum modul',
+  'responsi tulis (ets)':'Ujian tulis', 'presentasi (eas)':'Presentasi dan tanya jawab', 'laporan resmi':'Laporan akhir project'
+};
 let D = null, view = 'home', rm = { m: 'kuis', s: 'urut' };
 PLUGS.forEach(p => $('plug').append(new Option('Plug ' + p, p)));
 
@@ -172,7 +204,6 @@ const base = h => h.replace(PCT, '').replace(/\s+/g, ' ').trim().toLowerCase();
 const judul = h => h.replace(PCT, '').replace(/\s+/g, ' ').trim();
 const bobot = h => { const m = h.match(/(\d+(?:[.,]\d+)?)\s*%/); return m ? parseFloat(m[1].replace(',', '.')) : NaN; };
 const own = t => t.rows.find(r => r.me);
-const bar = v => { const i = el('i'); i.style.width = Math.max(0, Math.min(100, isNaN(v) ? 0 : v)) + '%'; return el('div', 'bar', i); };
 
 // ---------- login ----------
 async function masuk(c, reload) {
@@ -216,20 +247,29 @@ function subTabel(subs, me) {
   const rows = subs.map(s => {
     const sk = num(me.v[s.i]), nl = sk > 5 ? sk : sk / 5 * 100, k = isNaN(s.w) ? NaN : nl * s.w / 100;
     if (!isNaN(k)) total += k;
-    return el('div', 'sr', el('span', '', s.label), el('span', 'n', fmt(sk) + (sk > 5 ? '' : ' / 5')), el('span', 'n', fmt(nl)), el('span', 'n', isNaN(s.w) ? '–' : fmt(s.w) + '%'), el('span', 'n', fmt(k)));
+    return el('div', 'sr', el('span', '', s.label), el('span', 'n', isNaN(s.w) ? '–' : fmt(s.w) + '%'), el('span', 'n', fmt(k)), el('span'));
   });
   return el('div', 'subs',
-    el('div', 'sr h', el('span', '', 'Sub komponen'), el('span', 'n', 'Skor'), el('span', 'n', 'Nilai'), el('span', 'n', 'Bobot'), el('span', 'n', 'Kontribusi')),
+    el('div', 'sr h', el('span', '', 'Sub komponen'), el('span', 'n', 'Bobot'), el('span', 'n', 'Kontribusi'), el('span')),
     rows,
-    el('div', 'sr t', el('span', '', 'Jumlah = nilai komponen'), el('span'), el('span'), el('span'), el('span', 'n', fmt(total))));
+    el('div', 'sr t', el('span', '', 'Nilai komponen'), el('span'), el('span', 'n', fmt(total)), el('span')));
 }
 
-function komp(m, me) {
-  const val = num(me.v[m.i]);
-  const subs = m.subs.filter(s => (me.v[s.i] || '') !== '');
-  const head = [el('div', '', el('b', '', m.label), isNaN(m.w) ? null : el('span', 'kw', 'bobot ' + fmt(m.w) + '%')), el('div', 'kv', fmt(val)), subs.length ? el('span', 'chev') : el('span'), bar(val)];
-  if (!subs.length) return el('div', 'komp', el('div', 'kh', head));
-  return el('details', 'komp', el('summary', 'kh', head), subTabel(subs, me));
+// sw = total bobot satu seksi (bobot ditampilkan relatif terhadap seksi); tanpa sw = bobot apa adanya
+function komp(m, me, sw) {
+  const val = num(me.v[m.i]), subs = m.subs.filter(s => (me.v[s.i] || '') !== '');
+  const bw = isNaN(m.w) ? NaN : (sw ? m.w / sw * 100 : m.w), ds = DESC[base(m.label)];
+  const head = [el('div', '', el('b', '', m.label), ds ? el('small', '', ds) : null), el('span', 'n', isNaN(bw) ? '–' : fmt(bw) + '%'), el('span', 'n big', fmt(val)), subs.length ? el('span', 'chev') : el('span')];
+  if (!subs.length) return el('div', 'komp', el('div', 'kr', head));
+  return el('details', 'komp', el('summary', 'kr', head), subTabel(subs, me));
+}
+
+function seksi(jd, mains, total, me) {
+  const sw = mains.reduce((s, m) => s + (isNaN(m.w) ? 0 : m.w), 0);
+  return el('section', 'sek',
+    el('div', 'sh', el('h3', '', jd), el('div', 'tot', el('small', '', 'Nilai ' + jd.toLowerCase()), el('b', '', fmt(total)))),
+    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Bobot'), el('span', 'n', 'Nilai'), el('span')),
+    mains.map(m => komp(m, me, sw)));
 }
 
 function grupTabel(t, cols) {
@@ -239,103 +279,148 @@ function grupTabel(t, cols) {
   return el('details', 'grup', el('summary', '', 'Lihat nilai kelompok (' + t.rows.length + ' anggota)'), el('div', 'sc', el('table', 'tb', el('thead', '', th), el('tbody', '', tb))));
 }
 
-// ---------- halaman ----------
-function asistenEl() {
-  const k = parseInt(D.user.kelompok);
-  if (isNaN(k) || !D.asisten) return null;
-  const pj = k <= 3 ? 1 : 2, a = D.asisten[pj];
-  if (!a) return null;
+function heroBand(kicker, title, stats) {
+  return el('section', 'hero', el('div', '', el('p', '', kicker), el('h2', '', title)),
+    el('div', 'hs', stats.filter(s => s).map(s => el('div', '', el('small', '', s[0]), el('b', '', fmt(s[1]))))));
+}
+
+// ---------- beranda ----------
+function foto(a) {
   const ph = el('div', 'foto'), img = new Image(); let coba = 0;
   const ini = () => ph.replaceChildren(a.nama.split(' ').slice(0, 2).map(x => x[0]).join(''));
   img.alt = a.nama;
   img.onerror = () => { if (!coba) { coba = 1; img.src = 'foto/' + a.nim + '.png'; } else ini(); };
   if (a.nim) { img.src = 'foto/' + a.nim + '.jpg'; ph.append(img); } else ini();
-  return el('div', 'asisten', ph, el('div', '', el('small', '', 'Asisten pembimbing · PJ ' + pj), el('b', '', a.nama)));
+  return ph;
+}
+function pjMilik() { const k = parseInt(D.user.kelompok); return isNaN(k) ? 0 : (k <= 3 ? 1 : 2); }
+
+function infoPlug() {
+  const I = D.info, u = D.user, p = el('section', 'panel');
+  const nilai = I.ranking.map(x => num(x.na)).filter(x => !isNaN(x));
+  const rata = nilai.length ? nilai.reduce((a, b) => a + b, 0) / nilai.length : NaN;
+  const kv = (a, b) => el('div', 'kv', el('span', 'mute', a), el('b', '', b));
+  p.append(el('div', 'ph', el('h3', '', 'Informasi Plug ' + u.plug)),
+    kv('Total praktikan', I.ranking.length), kv('Laki-laki', I.laki), kv('Perempuan', I.perempuan), kv('Jumlah kelompok', I.kelompok),
+    kv('Rata-rata nilai akhir', fmt(rata)), kv('Nilai tertinggi', fmt(nilai.length ? Math.max(...nilai) : NaN)),
+    el('div', 'ph', el('h3', '', 'Asisten')));
+  [1, 2].forEach(n => {
+    const a = D.asisten && D.asisten[n]; if (!a) return;
+    const rentang = n === 1 ? 'Kelompok 1–' + Math.min(3, I.kelompok) : (I.kelompok >= 4 ? 'Kelompok 4–' + I.kelompok : '');
+    p.append(el('div', 'pj', foto(a), el('div', '', el('b', '', a.nama, pjMilik() === n ? el('span', 'tag', 'Asistenmu') : null), el('small', '', 'PJ ' + n + (rentang ? ' · ' + rentang : '')))));
+  });
+  return p;
+}
+
+function peringkat() {
+  const I = D.info, p = el('section', 'panel');
+  p.append(el('div', 'ph', el('h3', '', 'Peringkat Plug ' + D.user.plug), el('small', '', 'Berdasarkan nilai akhir')),
+    el('div', 'rkl', I.ranking.map(x => el('div', 'ri' + (x.me ? ' me' : '') + (x.r <= 3 ? ' t3' : ''), el('span', 'no', x.r), el('span', '', x.nama), el('span', '', fmt(num(x.na)), x.hk ? el('small', '', '  ' + x.hk) : null)))));
+  return p;
 }
 
 function beranda() {
-  const u = D.user, w = el('div');
+  const u = D.user, w = el('div'), pj = pjMilik(), a = D.asisten && D.asisten[pj];
   w.append(el('section', 'hero',
-    el('div', '', el('p', 'sm', 'Selamat datang'), el('h2', '', u.nama), el('p', 'sm', 'NIM ' + u.nim + ' · Plug ' + u.plug + (u.kelompok ? ' · Kelompok ' + u.kelompok : ''))),
-    asistenEl()));
+    el('div', '', el('p', '', 'Selamat datang'), el('h2', '', u.nama), el('p', '', 'NIM ' + u.nim + ' · Plug ' + u.plug + (u.kelompok ? ' · Kelompok ' + u.kelompok : ''))),
+    a ? el('div', 'asisten', foto(a), el('div', '', el('small', '', 'Asisten pembimbing · PJ ' + pj), el('b', '', a.nama))) : null));
   const t = D.tabs.rekap;
   if (!t) { w.append(el('p', 'empty', 'Data rekap belum tersedia.')); return w; }
   const me = own(t);
   const cari = key => { const i = t.headers.findIndex(h => base(h) === key); return i < 0 ? null : { v: me.v[i], w: bobot(t.headers[i]) }; };
-  const defs = [['ets', 'ETS', 'Responsi tulis'], ['eas', 'EAS', 'Presentasi / tanya jawab'], ['quiz', 'Quiz', 'Pretest & tugas modul'], ['tugas', 'Tugas', 'Asistensi & laporan sementara'], ['project based', 'Project Based', 'Tugas besar & laporan resmi']];
+  const defs = [['ets', 'ETS', 'Responsi tulis'], ['eas', 'EAS', 'Presentasi dan tanya jawab'], ['quiz', 'Quiz', 'Pretest dan tugas modul'], ['tugas', 'Tugas', 'Asistensi dan laporan sementara'], ['project based', 'Project Based', 'Tugas besar dan laporan resmi']];
   const rows = [];
   defs.forEach(d => {
     const c = cari(d[0]); if (!c) return;
-    const v = num(c.v);
-    rows.push(el('div', 'row', el('div', '', el('b', '', d[1]), el('small', '', d[2] + (isNaN(c.w) ? '' : ' · bobot ' + fmt(c.w) + '%'))),
-      el('div', 'r', el('span', 'big', c.v === '' ? '–' : fmt(v)), !isNaN(c.w) && !isNaN(v) ? el('small', '', 'menyumbang ' + fmt(v * c.w / 100)) : null)));
+    rows.push(el('div', 'row', el('div', '', el('b', '', d[1]), el('small', '', d[2] + (isNaN(c.w) ? '' : ' · bobot ' + fmt(c.w) + '%')), ), el('span', 'big', c.v === '' ? '–' : fmt(num(c.v)))));
   });
-  const aw = cari('nilai awal'), pt = cari('poin tambahan');
-  if (pt && pt.v !== '') rows.push(el('div', 'row', el('b', '', 'Poin tambahan'), el('div', 'r big', '+' + fmt(num(pt.v)))));
-  if (aw) rows.push(el('div', 'row', el('b', '', 'Nilai awal'), el('div', 'r big', fmt(num(aw.v)))));
-  const na = cari('nilai akhir'), hk = cari('hakikat');
-  w.append(el('div', 'split', el('div', 'panel', rows),
-    el('div', 'grade', el('span', '', 'Nilai akhir'), el('div', 'n', na ? fmt(num(na.v)) : '–'), el('span', '', 'Hakikat'), el('div', 'h', hk && hk.v ? hk.v : '–'))));
+  const pt = cari('poin tambahan'), aw = cari('nilai awal'), na = cari('nilai akhir'), hk = cari('hakikat');
+  rows.push(el('div', 'row', el('div', '', el('b', '', 'Poin tambahan'), el('small', '', 'Nilai tambahan dari asisten')), el('span', 'big', pt && pt.v !== '' ? '+' + fmt(num(pt.v)) : '0')));
+  if (aw) rows.push(el('div', 'row', el('b', '', 'Nilai awal'), el('span', 'big', fmt(num(aw.v)))));
+  const mine = D.info && D.info.ranking.find(x => x.me);
+  w.append(el('div', 'grid2',
+    el('div', 'grade',
+      el('div', '', el('small', '', 'Nilai akhir'), el('div', 'n1', na ? fmt(num(na.v)) : '–')), el('hr'),
+      el('div', '', el('small', '', 'Hakikat'), el('div', 'n2', hk && hk.v ? hk.v : '–')),
+      mine ? [el('hr'), el('div', '', el('small', '', 'Peringkat di Plug ' + u.plug), el('div', 'n3', mine.r + ' dari ' + D.info.ranking.length))] : null),
+    el('section', 'panel', el('div', 'ph', el('h3', '', 'Komponen Nilai')), rows)));
+  if (D.info) w.append(el('div', 'grid2', infoPlug(), peringkat()));
   return w;
 }
 
-function modulView(n) {
-  const t = D.tabs.modul[n], sec = el('section', 'mod');
-  if (!t) { sec.append(el('h2', '', 'Modul ' + n), el('p', 'empty', 'Belum ada data untuk modul ini.')); return sec; }
-  const K = parseKomp(t, /^(pretest|tugas modul|asistensi|laporan sementara)/, /^(nilai akhir (quiz|tugas)|catatan)/), me = own(t);
-  const q = K.extra['nilai akhir quiz'], g = K.extra['nilai akhir tugas'], c = K.extra['catatan'];
-  sec.append(el('div', 'mh', el('h2', '', 'Modul ' + n + ' · ' + t.name),
-    el('div', 'st', q != null ? el('div', '', el('small', '', 'Nilai kuis'), el('b', '', fmt(num(me.v[q])))) : null, g != null ? el('div', '', el('small', '', 'Nilai tugas'), el('b', '', fmt(num(me.v[g])))) : null)));
-  K.mains.forEach(m => sec.append(komp(m, me)));
-  if (c != null && me.v[c]) sec.append(el('p', 'cat', 'Catatan asisten: ' + me.v[c]));
-  const cols = K.mains.map(m => [m.label, m.i]);
-  if (q != null) cols.push(['Kuis', q]); if (g != null) cols.push(['Tugas', g]);
-  sec.append(grupTabel(t, cols));
-  return sec;
+// ---------- acara / modul ----------
+function pilihModul(a) {   // acara berisi 2 modul dengan nilai sama -> tampilkan satu (yang datanya paling lengkap)
+  let best = null, skor = -1;
+  ACARA[a].forEach(n => {
+    const t = D.tabs.modul[n]; if (!t) return;
+    const me = own(t), s = me.v.filter(x => x !== '').length;
+    if (s > skor) { skor = s; best = n; }
+  });
+  return best;
 }
 
 function acaraView(a) {
-  const w = el('div');
-  ACARA[a].forEach(n => w.append(modulView(n)));
+  const n = pilihModul(a), t = n && D.tabs.modul[n], w = el('div');
+  if (!t) { w.append(el('section', 'panel', el('p', 'empty', 'Belum ada data untuk acara ini.'))); return w; }
+  const K = parseKomp(t, /^(pretest|tugas modul|asistensi|laporan sementara)/, /^(nilai akhir (quiz|tugas)|catatan)/), me = own(t);
+  const q = K.extra['nilai akhir quiz'], g = K.extra['nilai akhir tugas'], c = K.extra['catatan'];
+  const modul = ACARA[a].length > 1 ? 'Modul ' + ACARA[a].join(' & ') : 'Modul ' + n;
+  w.append(heroBand('Acara ' + a + ' · ' + modul, JUDUL_ACARA[a], [q != null ? ['Nilai kuis', num(me.v[q])] : null, g != null ? ['Nilai tugas', num(me.v[g])] : null]));
+  const kuis = K.mains.filter(m => /^(pretest|tugas modul)/.test(base(m.label))), tugas = K.mains.filter(m => /^(asistensi|laporan sementara)/.test(base(m.label)));
+  const p = el('section', 'panel');
+  if (kuis.length) p.append(seksi('Kuis', kuis, q != null ? num(me.v[q]) : NaN, me));
+  if (tugas.length) p.append(seksi('Tugas', tugas, g != null ? num(me.v[g]) : NaN, me));
+  if (c != null && me.v[c]) p.append(el('p', 'cat', 'Catatan asisten: ' + me.v[c]));
+  const cols = K.mains.map(m => [m.label, m.i]);
+  if (q != null) cols.push(['Kuis', q]); if (g != null) cols.push(['Tugas', g]);
+  const gt = grupTabel(t, cols);
+  if (gt) p.append(el('div', 'sek', gt));
+  w.append(p);
   return w;
 }
 
+// ---------- ETS & EAS ----------
 function responsiView() {
-  const t = D.tabs.responsi, w = el('div', 'mod');
-  if (!t) { w.append(el('p', 'empty', 'Data responsi belum tersedia.')); return w; }
+  const t = D.tabs.responsi, w = el('div');
+  if (!t) { w.append(el('section', 'panel', el('p', 'empty', 'Data responsi belum tersedia.'))); return w; }
   const K = parseKomp(t, /^(responsi tulis|presentasi)/, /^catatan/), me = own(t);
-  w.append(el('div', 'mh', el('h2', '', 'ETS & EAS')));
-  K.mains.forEach(m => w.append(komp(m, me)));
-  if (K.extra['catatan'] != null && me.v[K.extra['catatan']]) w.append(el('p', 'cat', 'Catatan asisten: ' + me.v[K.extra['catatan']]));
+  w.append(heroBand('Responsi', 'ETS & EAS', K.mains.map(m => [m.label.replace(/\s*\(.*\)/, '') + ' (' + (m.label.match(/\((.*)\)/) || ['', ''])[1] + ')', num(me.v[m.i])])));
+  const p = el('section', 'panel', el('div', 'sh', el('h3', '', 'Komponen Responsi')),
+    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Bobot'), el('span', 'n', 'Nilai'), el('span')), K.mains.map(m => komp(m, me)));
+  const ci = K.extra['catatan']; if (ci != null && me.v[ci]) p.append(el('p', 'cat', 'Catatan asisten: ' + me.v[ci]));
+  w.append(p);
   return w;
 }
 
+// ---------- project based ----------
 function projectView() {
-  const t = D.tabs.project, w = el('div', 'mod');
-  if (!t) { w.append(el('p', 'empty', 'Data project based belum tersedia.')); return w; }
+  const t = D.tabs.project, w = el('div');
+  if (!t) { w.append(el('section', 'panel', el('p', 'empty', 'Data project based belum tersedia.'))); return w; }
   const me = own(t), idx = re => t.headers.findIndex(h => re.test(base(h))), val = i => i < 0 ? NaN : num(me.v[i]);
   const iPB = idx(/^nilai akhir project based/), iTB = idx(/^nilai akhir tugas besar/), iLR = idx(/^nilai akhir laporan resmi/);
-  w.append(el('div', 'mh', el('h2', '', 'Project Based'), el('div', 'st', el('div', '', el('small', '', 'Nilai akhir project based'), el('b', '', fmt(val(iPB)))))));
-
-  w.append(el('div', 'sec', 'Tugas besar · bobot 30%'));
-  w.append(el('div', 'komp', el('div', 'kh', el('b', '', 'Nilai akhir tugas besar'), el('div', 'kv', fmt(val(iTB))), el('span'), bar(val(iTB)))));
+  w.append(heroBand('Project Based', 'Tugas Besar & Laporan Resmi', [['Nilai akhir project based', val(iPB)], ['Tugas besar', val(iTB)], ['Laporan resmi', val(iLR)]]));
+  const p = el('section', 'panel tw2');
+  const items = [];
   t.headers.forEach((h, i) => {
     if (!/^(use ?case|dfd|erd|flowchart|dbms|pengujian|ux|website|ux website)$/.test(base(h))) return;
-    const v = val(i);
-    w.append(el('div', 'komp', el('div', 'kh', el('span', '', judul(h)), el('div', 'kv', fmt(v)), el('span'), bar(v))));
+    items.push(el('div', 'komp', el('div', 'kr', el('b', '', judul(h)), el('span', 'n big', fmt(val(i))), el('span'))));
   });
-
-  w.append(el('div', 'sec', 'Laporan resmi · bobot 20%'));
+  p.append(el('section', 'sek', el('div', 'sh', el('h3', '', 'Tugas Besar'), el('div', 'tot', el('small', '', 'Nilai akhir · bobot ' + fmt(bobot(t.headers[iTB] || '')) + '%'), el('b', '', fmt(val(iTB))))),
+    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Nilai'), el('span')), items));
   const iRaw = idx(/^laporan resmi$/), subs = [];
   t.headers.forEach((h, i) => { if (/^(format & kerapian|kualitas pembahasan|tata tulis)/.test(base(h))) subs.push({ label: judul(h), w: bobot(h), i }); });
-  w.append(komp({ label: 'Laporan resmi', w: NaN, i: iRaw >= 0 ? iRaw : iLR, subs }, me));
-  if (iLR >= 0) w.append(el('div', 'row', el('span', 'mute', 'Nilai akhir laporan resmi (sudah dikali bobot)'), el('div', 'r big', fmt(val(iLR)))));
+  const lw = el('section', 'sek', el('div', 'sh', el('h3', '', 'Laporan Resmi'), el('div', 'tot', el('small', '', 'Nilai akhir · bobot ' + fmt(bobot(t.headers[iLR] || '')) + '%'), el('b', '', fmt(val(iLR))))),
+    el('div', 'th', el('span', '', 'Komponen'), el('span', 'n', 'Nilai'), el('span')));
+  lw.append(komp({ label: 'Laporan resmi', w: NaN, i: iRaw >= 0 ? iRaw : iLR, subs }, me));
+  p.append(lw);
+  w.append(p);
   return w;
 }
 
+// ---------- rekap nilai ----------
 function rekapView() {
-  const t = D.tabs.rekapModul, w = el('div', 'mod');
-  if (!t) { w.append(el('p', 'empty', 'Data rekap modul belum tersedia.')); return w; }
+  const t = D.tabs.rekapModul, w = el('div');
+  if (!t) { w.append(el('section', 'panel', el('p', 'empty', 'Data rekap belum tersedia.'))); return w; }
   const me = own(t), G = { kuis: {}, tugas: {} }, tot = {}; let g = '';
   t.headers.forEach((h, i) => {
     const b = base(h);
@@ -343,31 +428,37 @@ function rekapView() {
     else if (/^nilai keseluruhan tugas/.test(b)) { g = 'tugas'; tot.tugas = i; }
     else { const m = b.match(/^modul\s*(\d+)/); if (m && g) G[g][+m[1]] = i; }
   });
-  w.append(el('div', 'mh', el('h2', '', 'Rekap Modul'), el('div', 'st',
-    tot.kuis != null ? el('div', '', el('small', '', 'Keseluruhan kuis'), el('b', '', fmt(num(me.v[tot.kuis])))) : null,
-    tot.tugas != null ? el('div', '', el('small', '', 'Keseluruhan tugas'), el('b', '', fmt(num(me.v[tot.tugas])))) : null)));
-  const ctl = el('div', 'ctl'), list = el('div');
-  const seg = (opts, key) => {
-    const s = el('div', 'seg');
-    opts.forEach(o => { const b = el('button', '', o[1]); b.type = 'button'; b.setAttribute('aria-pressed', rm[key] === o[0]); b.onclick = () => { rm[key] = o[0]; [...s.children].forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); }; s.append(b); });
-    return s;
-  };
-  ctl.append(seg([['kuis', 'Kuis'], ['tugas', 'Tugas']], 'm'), seg([['urut', 'Urutan modul'], ['baik', 'Terbaik → terendah'], ['buruk', 'Terendah → terbaik']], 's'));
+  w.append(heroBand('Rekap', 'Rekap Nilai', [tot.kuis != null ? ['Keseluruhan kuis', num(me.v[tot.kuis])] : null, tot.tugas != null ? ['Keseluruhan tugas', num(me.v[tot.tugas])] : null]));
+  const list = el('div'), ctl = el('div', 'ctl'), seg = el('div', 'seg');
+  [['kuis', 'Kuis'], ['tugas', 'Tugas']].forEach(o => {
+    const b = el('button', '', o[1]); b.type = 'button'; b.setAttribute('aria-pressed', rm.m === o[0]);
+    b.onclick = () => { rm.m = o[0]; [...seg.children].forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); };
+    seg.append(b);
+  });
+  const sel = el('select', 'sel'); sel.setAttribute('aria-label', 'Urutan');
+  [['urut', 'Urut acara'], ['baik', 'Nilai tertinggi'], ['buruk', 'Nilai terendah']].forEach(o => sel.append(new Option(o[1], o[0], false, rm.s === o[0])));
+  sel.onchange = () => { rm.s = sel.value; draw(); };
+  ctl.append(seg, sel);
   function draw() {
-    const items = Object.keys(G[rm.m]).map(n => ({ n: +n, v: num(me.v[G[rm.m][n]]) }));
-    const key = x => isNaN(x.v) ? Infinity : x.v;
-    if (rm.s === 'urut') items.sort((a, b) => a.n - b.n);
-    else if (rm.s === 'baik') items.sort((a, b) => (isNaN(b.v) ? -1 : b.v) - (isNaN(a.v) ? -1 : a.v));
-    else items.sort((a, b) => key(a) - key(b));
-    list.replaceChildren(...items.map((x, i) => el('div', 'rk', el('span', 'no', rm.s === 'urut' ? x.n : i + 1),
-      el('div', '', el('b', '', 'Modul ' + x.n), D.tabs.modul[x.n] ? el('span', 'kw', D.tabs.modul[x.n].name) : null), el('span', 'big', fmt(x.v)), bar(x.v))));
+    const items = Object.keys(JUDUL_ACARA).map(a => {
+      let v = NaN, n = ACARA[a][0];
+      ACARA[a].forEach(x => { if (isNaN(v) && G[rm.m][x] != null) { const y = num(me.v[G[rm.m][x]]); if (!isNaN(y)) { v = y; n = x; } } });
+      return { a: +a, v, n };
+    });
+    if (rm.s === 'urut') items.sort((x, y) => x.a - y.a);
+    else if (rm.s === 'baik') items.sort((x, y) => (isNaN(y.v) ? -1 : y.v) - (isNaN(x.v) ? -1 : x.v));
+    else items.sort((x, y) => (isNaN(x.v) ? 1e9 : x.v) - (isNaN(y.v) ? 1e9 : y.v));
+    list.replaceChildren(...items.map((x, i) => el('div', 'rk', el('span', 'no', rm.s === 'urut' ? x.a : i + 1),
+      el('div', '', el('b', '', 'Acara ' + x.a), el('small', '', JUDUL_ACARA[x.a])), el('span', 'big', fmt(x.v)))));
   }
-  draw(); w.append(el('div', '', ctl), list);
+  draw();
+  w.append(el('section', 'panel', el('div', 'ph', el('h3', '', 'Nilai per Acara'), ctl), list));
   return w;
 }
 
 // ---------- navigasi & render ----------
-const JUDUL = { home: 'Beranda', responsi: 'ETS & EAS', project: 'Project Based', rekap: 'Rekap Modul' };
+const JUDUL = { home: 'Beranda', responsi: 'ETS & EAS', project: 'Project Based', rekap: 'Rekap Nilai' };
+const isAcara = () => /^a\d$/.test(view);
 function nav() {
   const n = $('nav'); n.replaceChildren();
   const item = (id, t) => { const b = el('button', 'ni' + (view === id ? ' on' : ''), t); b.onclick = () => { view = id; tampil(); }; return b; };
@@ -375,23 +466,22 @@ function nav() {
   const sub = el('div', 'sub');
   for (let a = 1; a <= 9; a++) {
     const m = ACARA[a], b = el('button', view === 'a' + a ? 'on' : '', 'Acara ' + a, el('small', '', m.length > 1 ? 'Modul ' + m[0] + ' & ' + m[1] : 'Modul ' + m[0]));
+    b.title = JUDUL_ACARA[a];
     b.onclick = () => { view = 'a' + a; tampil(); };
     sub.append(b);
   }
-  const tog = el('button', 'ni' + (/^a\d$/.test(view) ? ' on' : ''), 'Nilai per Acara ▾');
+  const tog = el('button', 'ni' + (isAcara() ? ' on' : ''), 'Nilai per Acara ▾');
   const h = el('div', 'has-sub', tog, sub);
   tog.onclick = () => h.classList.toggle('open');
-  n.append(h, item('responsi', 'ETS & EAS'), item('project', 'Project Based'), item('rekap', 'Rekap Modul'));
+  n.append(h, item('responsi', 'ETS & EAS'), item('project', 'Project Based'), item('rekap', 'Rekap Nilai'));
   const o = el('button', 'ni out', 'Keluar'); o.onclick = keluar; n.append(o);
 }
 
 function tampil() {
   $('login').hidden = true; $('app').hidden = false; nav();
-  const judulHal = /^a\d$/.test(view) ? 'Acara ' + view.slice(1) : JUDUL[view];
   const r = el('button', 'ghost', 'Muat ulang'); r.onclick = () => masuk(JSON.parse(sessionStorage.getItem('apsi')), true);
-  const body = view === 'home' ? beranda() : /^a\d$/.test(view) ? acaraView(+view.slice(1)) : view === 'responsi' ? responsiView() : view === 'project' ? projectView() : rekapView();
-  $('main').replaceChildren(el('div', 'top', el('h1', '', judulHal), r), body,
-    el('p', 'mute', 'Data dibaca langsung dari spreadsheet pada ' + new Date(D.updated).toLocaleString('id-ID') + '.'));
+  const body = view === 'home' ? beranda() : isAcara() ? acaraView(+view.slice(1)) : view === 'responsi' ? responsiView() : view === 'project' ? projectView() : rekapView();
+  $('main').replaceChildren(el('div', 'top', el('h1', '', isAcara() ? 'Acara ' + view.slice(1) : JUDUL[view]), r), body);
   window.scrollTo(0, 0);
 }
 
@@ -400,4 +490,3 @@ if (tersimpan) masuk(JSON.parse(tersimpan), false);
 </script>
 </body>
 </html>
-
