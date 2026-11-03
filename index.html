@@ -1,479 +1,402 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nilai Praktikum APSI 2026</title>
-    <style>
-      :root {
-        --bg: #f3f5f8;
-        --card: #fff;
-        --ink: #16213a;
-        --mute: #5b6679;
-        --line: #dde2ea;
-        --acc: #0f6b66;
-        --accbg: #e3f3f1;
-        --err: #b42318;
-        --me: #fff7d6;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #10151f;
-          --card: #18202e;
-          --ink: #e8ecf3;
-          --mute: #9aa6bb;
-          --line: #2b3547;
-          --acc: #4fd1c5;
-          --accbg: #173a3a;
-          --err: #ff8a80;
-          --me: #3a3416;
-        }
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--ink);
-        font:
-          15px/1.55 system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          sans-serif;
-      }
-      main {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 24px 16px 56px;
-      }
-      h1,
-      h2 {
-        margin: 0;
-        line-height: 1.2;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        padding: 20px;
-      }
-      #loginView {
-        max-width: 420px;
-        margin: 8vh auto 0;
-      }
-      #loginView h1 {
-        font-size: 22px;
-        margin-bottom: 4px;
-      }
-      .sub {
-        color: var(--mute);
-        margin: 0 0 18px;
-      }
-      label {
-        display: block;
-        font-weight: 600;
-        margin: 14px 0 4px;
-      }
-      input,
-      select,
-      button {
-        font: inherit;
-        width: 100%;
-        padding: 10px 12px;
-        border-radius: 8px;
-        border: 1px solid var(--line);
-        background: var(--card);
-        color: var(--ink);
-      }
-      input:focus-visible,
-      select:focus-visible,
-      button:focus-visible {
-        outline: 2px solid var(--acc);
-        outline-offset: 1px;
-      }
-      button {
-        cursor: pointer;
-        background: var(--acc);
-        border-color: var(--acc);
-        color: #fff;
-        font-weight: 600;
-        margin-top: 18px;
-      }
-      @media (prefers-color-scheme: dark) {
-        button {
-          color: #08201f;
-        }
-      }
-      button.ghost {
-        background: transparent;
-        color: var(--ink);
-        border-color: var(--line);
-        width: auto;
-        margin: 0;
-        padding: 7px 12px;
-        font-weight: 500;
-      }
-      button:disabled {
-        opacity: 0.6;
-        cursor: wait;
-      }
-      .err {
-        color: var(--err);
-        margin: 12px 0 0;
-        min-height: 1.2em;
-      }
-      .top {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-      .top h1 {
-        font-size: 22px;
-      }
-      .meta {
-        color: var(--mute);
-        margin: 4px 0 0;
-      }
-      .actions {
-        display: flex;
-        gap: 8px;
-      }
-      .grade {
-        display: flex;
-        gap: 28px;
-        margin: 18px 0;
-        flex-wrap: wrap;
-      }
-      .grade div {
-        min-width: 120px;
-      }
-      .grade span {
-        display: block;
-        color: var(--mute);
-        font-size: 13px;
-      }
-      .grade b {
-        font:
-          700 44px/1.1 Georgia,
-          "Times New Roman",
-          serif;
-      }
-      .tabs {
-        display: flex;
-        gap: 6px;
-        overflow-x: auto;
-        padding-bottom: 6px;
-        margin-bottom: 12px;
-      }
-      .tabs button {
-        width: auto;
-        margin: 0;
-        white-space: nowrap;
-        padding: 7px 14px;
-        background: var(--card);
-        color: var(--ink);
-        border-color: var(--line);
-        font-weight: 500;
-      }
-      .tabs button[aria-selected="true"] {
-        background: var(--acc);
-        border-color: var(--acc);
-        color: #fff;
-      }
-      @media (prefers-color-scheme: dark) {
-        .tabs button[aria-selected="true"] {
-          color: #08201f;
-        }
-      }
-      h2 {
-        font-size: 17px;
-        margin: 0 0 12px;
-      }
-      .kv {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-        gap: 10px;
-      }
-      .kv div {
-        background: var(--accbg);
-        border-radius: 8px;
-        padding: 10px 12px;
-      }
-      .kv span {
-        display: block;
-        font-size: 12.5px;
-        color: var(--mute);
-      }
-      .kv b {
-        font-size: 17px;
-        word-break: break-word;
-      }
-      .group {
-        margin-top: 22px;
-      }
-      .wrap {
-        overflow-x: auto;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        font-size: 14px;
-      }
-      th,
-      td {
-        padding: 8px 10px;
-        border-bottom: 1px solid var(--line);
-        text-align: left;
-        vertical-align: top;
-      }
-      th {
-        background: var(--accbg);
-        font-weight: 600;
-        min-width: 90px;
-      }
-      tr:last-child td {
-        border-bottom: 0;
-      }
-      tr.me td {
-        background: var(--me);
-        font-weight: 600;
-      }
-      .foot {
-        color: var(--mute);
-        font-size: 13px;
-        margin-top: 14px;
-      }
-      [hidden] {
-        display: none !important;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <section id="loginView" class="card">
-        <h1>Nilai Praktikum APSI</h1>
-        <p class="sub">
-          Masuk dengan data praktikan yang sesuai.
-        </p>
-        <form id="form" autocomplete="off">
-          <label for="plug">Plug</label>
-          <select id="plug" required></select>
-          <label for="nim">NIM</label>
-          <input id="nim" inputmode="numeric" required />
-          <label for="nama">Nama lengkap</label>
-          <input id="nama" required />
-          <p class="err" id="err" role="alert"></p>
-          <button id="btnMasuk" type="submit">Lihat nilai</button>
-        </form>
-      </section>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nilai Praktikum APSI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+:root{--o1:#f26a1b;--o2:#ff9d42;--od:#b83e07;--navy:#13263f;--blue:#1f6f8b;--bg:#f4f5f7;--ink:#1b2433;--mute:#667085;--line:#e7e9ee}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.55 Poppins,system-ui,sans-serif}
+button{font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--o1);outline-offset:2px}
+[hidden]{display:none!important}
+h1,h2,p{margin:0}
+/* login */
+.lg{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr}
+.lgl{background:linear-gradient(150deg,var(--od),var(--o1) 55%,var(--o2));color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:flex-end}
+.lgl h1{font-size:42px;line-height:1.1;margin-bottom:10px}
+.lgr{display:grid;place-items:center;padding:32px}
+form{width:100%;max-width:360px}
+form h2{font-size:22px;margin-bottom:4px}
+label{display:block;font-weight:600;margin:14px 0 4px}
+input,select{width:100%;padding:11px 13px;border:1px solid #cfd4dc;border-radius:10px;font:inherit;background:#fff}
+.go{width:100%;margin-top:18px;background:var(--o1);color:#fff;border:0;border-radius:10px;padding:12px;font-weight:600}
+.go:disabled{opacity:.6;cursor:wait}
+.err{color:#b42318;min-height:1.4em;margin-top:10px}
+.mute{color:var(--mute)}
+/* kerangka */
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+aside{background:linear-gradient(170deg,var(--o1),var(--od));color:#fff;border-radius:0 28px 28px 0;padding:24px 16px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.brand{font-weight:700;font-size:20px;padding:0 10px 22px}
+.brand small{display:block;font-weight:400;font-size:11.5px;opacity:.85}
+nav{display:flex;flex-direction:column;gap:4px;flex:1}
+.ni{background:none;border:0;color:#fff;text-align:left;padding:11px 14px;border-radius:12px;width:100%;font-weight:500}
+.ni:hover{background:rgba(255,255,255,.2)}
+.ni.on{background:#fff;color:var(--od);font-weight:600}
+.out{margin-top:auto;border:1px solid rgba(255,255,255,.5)}
+.has-sub{position:relative}
+.sub{display:none;position:absolute;left:calc(100% - 4px);top:-4px;z-index:20;background:#fff;color:var(--ink);border-radius:14px;box-shadow:0 12px 32px rgba(19,38,63,.25);padding:8px;width:240px}
+.has-sub:hover .sub,.has-sub.open .sub{display:block}
+.sub button{display:flex;justify-content:space-between;gap:8px;width:100%;background:none;border:0;padding:9px 12px;border-radius:9px;text-align:left}
+.sub button:hover,.sub button.on{background:#fff1e8;color:var(--od)}
+.sub small{color:var(--mute)}
+main{padding:28px 32px 60px;max-width:1100px;width:100%}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.top h1{font-size:22px}
+.ghost{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;color:var(--ink)}
+/* beranda */
+.hero{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;padding:26px 28px;border-radius:22px;background:linear-gradient(120deg,var(--o1),var(--o2));color:#fff;margin-bottom:22px}
+.hero h2{font-size:24px;margin:2px 0}
+.hero .sm{opacity:.9;font-size:13px}
+.asisten{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.2);padding:10px 20px 10px 10px;border-radius:999px}
+.asisten small{display:block;opacity:.9;font-size:12px}
+.foto{width:54px;height:54px;border-radius:50%;background:#fff;color:var(--od);display:grid;place-items:center;font-weight:700;overflow:hidden;flex:none}
+.foto img{width:100%;height:100%;object-fit:cover}
+.split{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start}
+.panel{background:#fff;border-radius:20px;padding:6px 24px;border:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.row:last-child{border:0}
+.row small{color:var(--mute);display:block}
+.row .r{text-align:right}
+.big{font-size:20px;font-weight:700;color:var(--od)}
+.grade{background:var(--navy);color:#fff;border-radius:22px;padding:28px;text-align:center}
+.grade span{opacity:.75;font-size:13px;display:block}
+.grade .n{font-size:64px;font-weight:700;line-height:1.1;color:var(--o2);margin-bottom:18px}
+.grade .h{font-size:64px;font-weight:700;line-height:1.1;border-top:1px solid rgba(255,255,255,.2);padding-top:18px}
+/* komponen */
+.komp{border-bottom:1px solid var(--line)}
+.komp:last-child{border:0}
+.kh{display:grid;grid-template-columns:1fr auto 18px;gap:6px 12px;align-items:center;padding:16px 0}
+.kh .kv{font-size:20px;font-weight:700;color:var(--od)}
+.kw{font-size:12px;color:var(--mute);margin-left:8px;font-weight:400}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+.chev{width:8px;height:8px;border:solid var(--mute);border-width:0 2px 2px 0;transform:rotate(45deg);transition:.2s;justify-self:center}
+details[open]>summary .chev{transform:rotate(-135deg)}
+.bar{grid-column:1/-1;height:6px;background:#eef0f3;border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--o1),var(--o2));border-radius:6px}
+.subs{margin:0 0 16px 6px;padding:2px 0 4px 16px;border-left:3px solid var(--o2);font-size:13px}
+.sr{display:grid;grid-template-columns:1fr 66px 48px 52px 70px;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.sr.h{color:var(--mute);font-size:12px}
+.sr.t{font-weight:700;border:0;color:var(--od)}
+.n{text-align:right}
+.mod{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 24px 14px;margin-bottom:22px}
+.mh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:flex-end;border-bottom:2px solid var(--o1);padding-bottom:12px}
+.mh h2{font-size:18px}
+.st{display:flex;gap:22px}
+.st small{display:block;color:var(--mute);font-size:12px}
+.st b{font-size:18px}
+.cat{margin:12px 0 0;color:var(--mute);font-size:13px}
+details.grup{padding:12px 0 6px}
+details.grup>summary{color:var(--blue);font-weight:600}
+.sc{overflow-x:auto;margin-top:8px}
+.tb{width:100%;border-collapse:collapse;font-size:13px}
+.tb th{color:var(--mute);font-weight:500;padding:8px;text-align:right;white-space:nowrap}
+.tb td{padding:9px 8px;text-align:right;border-top:1px solid var(--line)}
+.tb th:first-child,.tb td:first-child{text-align:left}
+.tb .me td{background:#fff4ec;font-weight:600}
+.sec{font-size:13px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin:22px 0 4px}
+.ctl{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.seg{display:flex;background:#e9ebef;border-radius:999px;padding:3px}
+.seg button{border:0;background:none;padding:6px 14px;border-radius:999px;color:var(--mute);font-weight:500}
+.seg button[aria-pressed=true]{background:var(--o1);color:#fff}
+.rk{display:grid;grid-template-columns:34px 1fr auto;gap:4px 12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.rk:last-child{border:0}
+.rk .no{width:28px;height:28px;border-radius:50%;background:#fff1e8;color:var(--od);font-weight:600;display:grid;place-items:center;font-size:12px}
+.rk .bar{grid-column:2/-1}
+.empty{padding:28px 0;color:var(--mute)}
+@media(max-width:860px){
+ .lg{grid-template-columns:1fr}.lgl{padding:32px;min-height:220px}.lgl h1{font-size:30px}
+ .app{display:block}
+ aside{position:static;height:auto;border-radius:0 0 22px 22px;padding:14px}
+ .brand{padding-bottom:10px}
+ nav{flex-direction:row;flex-wrap:wrap}.ni{width:auto;padding:8px 12px}.out{margin:0}
+ .sub{left:0;top:100%}
+ main{padding:20px 16px 48px}.split{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
 
-      <section id="dashView" hidden>
-        <div class="top">
-          <div>
-            <h1 id="dNama"></h1>
-            <p class="meta" id="dMeta"></p>
-          </div>
-          <div class="actions">
-            <button class="ghost" id="btnRefresh" type="button">
-              Muat ulang
-            </button>
-            <button class="ghost" id="btnKeluar" type="button">Keluar</button>
-          </div>
-        </div>
-        <div class="grade" id="grade"></div>
-        <div class="tabs" id="tabs" role="tablist"></div>
-        <div class="card" id="panel"></div>
-        <p class="foot" id="foot"></p>
-      </section>
-    </main>
+<div class="lg" id="login">
+  <div class="lgl">
+    <p>Laboratorium Analisis &amp; Perancangan Sistem Informasi</p>
+    <h1>Nilai Praktikum APSI</h1>
+    <p>UPN “Veteran” Yogyakarta · 2026</p>
+  </div>
+  <div class="lgr">
+    <form id="form" autocomplete="off">
+      <h2>Masuk</h2>
+      <p class="mute">Gunakan data praktikan untuk melihat nilaimu.</p>
+      <label for="plug">Plug</label><select id="plug" required></select>
+      <label for="nim">NIM</label><input id="nim" inputmode="numeric" required>
+      <label for="nama">Nama lengkap</label><input id="nama" required>
+      <p class="err" id="err" role="alert"></p>
+      <button class="go" id="go" type="submit">Lihat nilai</button>
+    </form>
+  </div>
+</div>
 
-    <script>
-      // ====== GANTI DENGAN URL WEB APP DARI APPS SCRIPT ======
-      const API_URL =
-        "https://script.google.com/macros/s/AKfycbzbQ9fspHzJWtCcst1PNt5OjQf3XaTzggkLmUiYQa72d3PWodhWuCoXWUs_QSel3TlG/exec";
-      // =======================================================
+<div class="app" id="app" hidden>
+  <aside>
+    <div class="brand">APSI<small>Dashboard nilai praktikan</small></div>
+    <nav id="nav"></nav>
+  </aside>
+  <main id="main"></main>
+</div>
 
-      const $ = (id) => document.getElementById(id);
-      const PLUGS = "ABCDEFGHIKLMNOPQRS".split(""); // tidak ada J
-      let state = { data: null, tab: 0 };
+<script>
+// ====== GANTI DENGAN URL WEB APP DARI APPS SCRIPT ======
+const API_URL = 'GANTI_DENGAN_URL_WEB_APP';
+// =======================================================
 
-      PLUGS.forEach((p) => $("plug").append(new Option("Plug " + p, p)));
+const $ = id => document.getElementById(id);
+const PLUGS = 'ABCDEFGHIKLMNOPQRS'.split('');            // tidak ada J
+const ACARA = {1:[1,2],2:[3],3:[4],4:[5],5:[6],6:[7],7:[8],8:[9],9:[10]};
+let D = null, view = 'home', rm = { m: 'kuis', s: 'urut' };
+PLUGS.forEach(p => $('plug').append(new Option('Plug ' + p, p)));
 
-      function el(tag, cls, ...kids) {
-        const e = document.createElement(tag);
-        if (cls) e.className = cls;
-        kids.flat().forEach((k) => {
-          if (k != null) e.append(k.nodeType ? k : document.createTextNode(k));
-        });
-        return e;
-      }
+function el(tag, cls, ...kids) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  kids.flat().forEach(k => { if (k != null && k !== false) e.append(k.nodeType ? k : document.createTextNode(k)); });
+  return e;
+}
+const num = s => parseFloat(String(s == null ? '' : s).replace(',', '.'));
+const fmt = n => isNaN(n) ? '–' : n.toLocaleString('id-ID', { maximumFractionDigits: 2 });
+const PCT = /\(?\s*(?:max\s*)?\d+(?:[.,]\d+)?\s*%\s*\)?/gi;
+const base = h => h.replace(PCT, '').replace(/\s+/g, ' ').trim().toLowerCase();
+const judul = h => h.replace(PCT, '').replace(/\s+/g, ' ').trim();
+const bobot = h => { const m = h.match(/(\d+(?:[.,]\d+)?)\s*%/); return m ? parseFloat(m[1].replace(',', '.')) : NaN; };
+const own = t => t.rows.find(r => r.me);
+const bar = v => { const i = el('i'); i.style.width = Math.max(0, Math.min(100, isNaN(v) ? 0 : v)) + '%'; return el('div', 'bar', i); };
 
-      async function ambil(plug, nim, nama) {
-        const url = API_URL + "?" + new URLSearchParams({ plug, nim, nama });
-        const res = await fetch(url);
-        return res.json();
-      }
+// ---------- login ----------
+async function masuk(c, reload) {
+  $('err').textContent = ''; $('go').disabled = true;
+  try {
+    const r = await fetch(API_URL + '?' + new URLSearchParams(c));
+    const d = await r.json();
+    if (!d.ok) throw new Error(d.message);
+    sessionStorage.setItem('apsi', JSON.stringify(c));
+    D = d; if (!reload) view = 'home';
+    tampil();
+  } catch (e) {
+    if (reload) alert('Gagal memuat ulang: ' + e.message);
+    else {
+      sessionStorage.removeItem('apsi');
+      $('login').hidden = false; $('app').hidden = true;
+      $('err').textContent = e.message === 'Failed to fetch' ? 'Tidak dapat terhubung ke server. Coba lagi.' : e.message;
+    }
+  } finally { $('go').disabled = false; }
+}
+$('form').addEventListener('submit', ev => {
+  ev.preventDefault();
+  masuk({ plug: $('plug').value, nim: $('nim').value.trim(), nama: $('nama').value.trim() }, false);
+});
+function keluar() { sessionStorage.removeItem('apsi'); D = null; $('app').hidden = true; $('login').hidden = false; $('nama').value = ''; }
 
-      async function masuk(cred, diam) {
-        $("err").textContent = "";
-        $("btnMasuk").disabled = true;
-        $("btnRefresh").disabled = true;
-        try {
-          const d = await ambil(cred.plug, cred.nim, cred.nama);
-          if (!d.ok) throw new Error(d.message);
-          sessionStorage.setItem("apsi", JSON.stringify(cred));
-          state.data = d;
-          if (!diam) state.tab = 0;
-          gambar();
-        } catch (e) {
-          if (diam) alert("Gagal memuat ulang: " + e.message);
-          else {
-            sessionStorage.removeItem("apsi");
-            $("loginView").hidden = false;
-            $("dashView").hidden = true;
-            $("err").textContent =
-              e.message === "Failed to fetch"
-                ? "Tidak dapat terhubung ke server. Coba lagi."
-                : e.message;
-          }
-        } finally {
-          $("btnMasuk").disabled = false;
-          $("btnRefresh").disabled = false;
-        }
-      }
+// ---------- komponen & sub komponen ----------
+function parseKomp(t, mainRe, endRe) {
+  const mains = [], extra = {}; let cur = null;
+  t.headers.forEach((h, i) => {
+    const b = base(h);
+    if (mainRe.test(b)) { cur = { label: judul(h), w: bobot(h), i, subs: [] }; mains.push(cur); }
+    else if (endRe.test(b)) { cur = null; extra[b] = i; }
+    else if (cur) cur.subs.push({ label: judul(h), w: bobot(h), i });
+  });
+  return { mains, extra };
+}
 
-      $("form").addEventListener("submit", (ev) => {
-        ev.preventDefault();
-        masuk(
-          {
-            plug: $("plug").value,
-            nim: $("nim").value.trim(),
-            nama: $("nama").value.trim(),
-          },
-          false,
-        );
-      });
-      $("btnRefresh").onclick = () =>
-        masuk(JSON.parse(sessionStorage.getItem("apsi")), true);
-      $("btnKeluar").onclick = () => {
-        sessionStorage.removeItem("apsi");
-        state.data = null;
-        $("dashView").hidden = true;
-        $("loginView").hidden = false;
-        $("nama").value = "";
-      };
+function subTabel(subs, me) {
+  let total = 0;
+  const rows = subs.map(s => {
+    const sk = num(me.v[s.i]), nl = sk > 5 ? sk : sk / 5 * 100, k = isNaN(s.w) ? NaN : nl * s.w / 100;
+    if (!isNaN(k)) total += k;
+    return el('div', 'sr', el('span', '', s.label), el('span', 'n', fmt(sk) + (sk > 5 ? '' : ' / 5')), el('span', 'n', fmt(nl)), el('span', 'n', isNaN(s.w) ? '–' : fmt(s.w) + '%'), el('span', 'n', fmt(k)));
+  });
+  return el('div', 'subs',
+    el('div', 'sr h', el('span', '', 'Sub komponen'), el('span', 'n', 'Skor'), el('span', 'n', 'Nilai'), el('span', 'n', 'Bobot'), el('span', 'n', 'Kontribusi')),
+    rows,
+    el('div', 'sr t', el('span', '', 'Jumlah = nilai komponen'), el('span'), el('span'), el('span'), el('span', 'n', fmt(total))));
+}
 
-      function cari(sheets, re) {
-        for (const s of sheets) {
-          const i = s.headers.findIndex((h) => re.test(h.trim()));
-          const me = s.rows.find((r) => r.me);
-          if (i >= 0 && me && me.v[i]) return me.v[i];
-        }
-        return "";
-      }
+function komp(m, me) {
+  const val = num(me.v[m.i]);
+  const subs = m.subs.filter(s => (me.v[s.i] || '') !== '');
+  const head = [el('div', '', el('b', '', m.label), isNaN(m.w) ? null : el('span', 'kw', 'bobot ' + fmt(m.w) + '%')), el('div', 'kv', fmt(val)), subs.length ? el('span', 'chev') : el('span'), bar(val)];
+  if (!subs.length) return el('div', 'komp', el('div', 'kh', head));
+  return el('details', 'komp', el('summary', 'kh', head), subTabel(subs, me));
+}
 
-      function gambar() {
-        const { user, sheets, updated } = state.data;
-        $("loginView").hidden = true;
-        $("dashView").hidden = false;
-        $("dNama").textContent = user.nama;
-        $("dMeta").textContent =
-          "NIM " +
-          user.nim +
-          " · Plug " +
-          user.plug +
-          (user.kelompok ? " · Kelompok " + user.kelompok : "");
+function grupTabel(t, cols) {
+  if (t.rows.length < 2) return null;
+  const th = el('tr', '', el('th', '', 'Nama'), cols.map(c => el('th', '', c[0])));
+  const tb = t.rows.map(r => el('tr', r.me ? 'me' : '', el('td', '', r.nama), cols.map(c => el('td', '', fmt(num(r.v[c[1]]))))));
+  return el('details', 'grup', el('summary', '', 'Lihat nilai kelompok (' + t.rows.length + ' anggota)'), el('div', 'sc', el('table', 'tb', el('thead', '', th), el('tbody', '', tb))));
+}
 
-        const na = cari(sheets, /^nilai akhir$/i),
-          hk = cari(sheets, /^hakikat$/i);
-        const g = $("grade");
-        g.replaceChildren();
-        if (na)
-          g.append(
-            el("div", "", el("span", "", "Nilai akhir"), el("b", "", na)),
-          );
-        if (hk)
-          g.append(el("div", "", el("span", "", "Hakikat"), el("b", "", hk)));
+// ---------- halaman ----------
+function asistenEl() {
+  const k = parseInt(D.user.kelompok);
+  if (isNaN(k) || !D.asisten) return null;
+  const pj = k <= 3 ? 1 : 2, a = D.asisten[pj];
+  if (!a) return null;
+  const ph = el('div', 'foto'), img = new Image(); let coba = 0;
+  const ini = () => ph.replaceChildren(a.nama.split(' ').slice(0, 2).map(x => x[0]).join(''));
+  img.alt = a.nama;
+  img.onerror = () => { if (!coba) { coba = 1; img.src = 'foto/' + a.nim + '.png'; } else ini(); };
+  if (a.nim) { img.src = 'foto/' + a.nim + '.jpg'; ph.append(img); } else ini();
+  return el('div', 'asisten', ph, el('div', '', el('small', '', 'Asisten pembimbing · PJ ' + pj), el('b', '', a.nama)));
+}
 
-        const tabs = $("tabs");
-        tabs.replaceChildren();
-        sheets.forEach((s, i) => {
-          const b = el("button", "", s.name);
-          b.type = "button";
-          b.setAttribute("role", "tab");
-          b.setAttribute("aria-selected", i === state.tab);
-          b.onclick = () => {
-            state.tab = i;
-            gambar();
-          };
-          tabs.append(b);
-        });
-        panel(sheets[state.tab]);
-        $("foot").textContent =
-          "Data dibaca langsung dari spreadsheet pada " +
-          new Date(updated).toLocaleString("id-ID") +
-          '. Tekan "Muat ulang" untuk data terbaru.';
-      }
+function beranda() {
+  const u = D.user, w = el('div');
+  w.append(el('section', 'hero',
+    el('div', '', el('p', 'sm', 'Selamat datang'), el('h2', '', u.nama), el('p', 'sm', 'NIM ' + u.nim + ' · Plug ' + u.plug + (u.kelompok ? ' · Kelompok ' + u.kelompok : ''))),
+    asistenEl()));
+  const t = D.tabs.rekap;
+  if (!t) { w.append(el('p', 'empty', 'Data rekap belum tersedia.')); return w; }
+  const me = own(t);
+  const cari = key => { const i = t.headers.findIndex(h => base(h) === key); return i < 0 ? null : { v: me.v[i], w: bobot(t.headers[i]) }; };
+  const defs = [['ets', 'ETS', 'Responsi tulis'], ['eas', 'EAS', 'Presentasi / tanya jawab'], ['quiz', 'Quiz', 'Pretest & tugas modul'], ['tugas', 'Tugas', 'Asistensi & laporan sementara'], ['project based', 'Project Based', 'Tugas besar & laporan resmi']];
+  const rows = [];
+  defs.forEach(d => {
+    const c = cari(d[0]); if (!c) return;
+    const v = num(c.v);
+    rows.push(el('div', 'row', el('div', '', el('b', '', d[1]), el('small', '', d[2] + (isNaN(c.w) ? '' : ' · bobot ' + fmt(c.w) + '%'))),
+      el('div', 'r', el('span', 'big', c.v === '' ? '–' : fmt(v)), !isNaN(c.w) && !isNaN(v) ? el('small', '', 'menyumbang ' + fmt(v * c.w / 100)) : null)));
+  });
+  const aw = cari('nilai awal'), pt = cari('poin tambahan');
+  if (pt && pt.v !== '') rows.push(el('div', 'row', el('b', '', 'Poin tambahan'), el('div', 'r big', '+' + fmt(num(pt.v)))));
+  if (aw) rows.push(el('div', 'row', el('b', '', 'Nilai awal'), el('div', 'r big', fmt(num(aw.v)))));
+  const na = cari('nilai akhir'), hk = cari('hakikat');
+  w.append(el('div', 'split', el('div', 'panel', rows),
+    el('div', 'grade', el('span', '', 'Nilai akhir'), el('div', 'n', na ? fmt(num(na.v)) : '–'), el('span', '', 'Hakikat'), el('div', 'h', hk && hk.v ? hk.v : '–'))));
+  return w;
+}
 
-      function panel(s) {
-        const p = $("panel");
-        p.replaceChildren();
-        const me = s.rows.find((r) => r.me);
-        p.append(el("h2", "", s.name + " — nilaimu"));
-        const kv = el("div", "kv");
-        s.headers.forEach((h, i) => {
-          if (me.v[i])
-            kv.append(el("div", "", el("span", "", h), el("b", "", me.v[i])));
-        });
-        p.append(
-          kv.children.length
-            ? kv
-            : el("p", "sub", "Belum ada nilai pada bagian ini."),
-        );
+function modulView(n) {
+  const t = D.tabs.modul[n], sec = el('section', 'mod');
+  if (!t) { sec.append(el('h2', '', 'Modul ' + n), el('p', 'empty', 'Belum ada data untuk modul ini.')); return sec; }
+  const K = parseKomp(t, /^(pretest|tugas modul|asistensi|laporan sementara)/, /^(nilai akhir (quiz|tugas)|catatan)/), me = own(t);
+  const q = K.extra['nilai akhir quiz'], g = K.extra['nilai akhir tugas'], c = K.extra['catatan'];
+  sec.append(el('div', 'mh', el('h2', '', 'Modul ' + n + ' · ' + t.name),
+    el('div', 'st', q != null ? el('div', '', el('small', '', 'Nilai kuis'), el('b', '', fmt(num(me.v[q])))) : null, g != null ? el('div', '', el('small', '', 'Nilai tugas'), el('b', '', fmt(num(me.v[g])))) : null)));
+  K.mains.forEach(m => sec.append(komp(m, me)));
+  if (c != null && me.v[c]) sec.append(el('p', 'cat', 'Catatan asisten: ' + me.v[c]));
+  const cols = K.mains.map(m => [m.label, m.i]);
+  if (q != null) cols.push(['Kuis', q]); if (g != null) cols.push(['Tugas', g]);
+  sec.append(grupTabel(t, cols));
+  return sec;
+}
 
-        if (s.rows.length > 1) {
-          const cols = s.headers
-            .map((h, i) => i)
-            .filter((i) => s.rows.some((r) => r.v[i]));
-          const g = el("div", "group", el("h2", "", "Kelompokmu"));
-          const t = el("table");
-          t.append(
-            el(
-              "thead",
-              "",
-              el(
-                "tr",
-                "",
-                el("th", "", "Nama"),
-                cols.map((i) => el("th", "", s.headers[i])),
-              ),
-            ),
-          );
-          const tb = el("tbody");
-          s.rows.forEach((r) =>
-            tb.append(
-              el(
-                "tr",
-                r.me ? "me" : "",
-                el("td", "", r.nama),
-                cols.map((i) => el("td", "", r.v[i])),
-              ),
-            ),
-          );
-          t.append(tb);
-          g.append(el("div", "wrap", t));
-          p.append(g);
-        }
-      }
+function acaraView(a) {
+  const w = el('div');
+  ACARA[a].forEach(n => w.append(modulView(n)));
+  return w;
+}
 
-      const tersimpan = sessionStorage.getItem("apsi");
-      if (tersimpan) masuk(JSON.parse(tersimpan), false);
-    </script>
-  </body>
+function responsiView() {
+  const t = D.tabs.responsi, w = el('div', 'mod');
+  if (!t) { w.append(el('p', 'empty', 'Data responsi belum tersedia.')); return w; }
+  const K = parseKomp(t, /^(responsi tulis|presentasi)/, /^catatan/), me = own(t);
+  w.append(el('div', 'mh', el('h2', '', 'ETS & EAS')));
+  K.mains.forEach(m => w.append(komp(m, me)));
+  if (K.extra['catatan'] != null && me.v[K.extra['catatan']]) w.append(el('p', 'cat', 'Catatan asisten: ' + me.v[K.extra['catatan']]));
+  return w;
+}
+
+function projectView() {
+  const t = D.tabs.project, w = el('div', 'mod');
+  if (!t) { w.append(el('p', 'empty', 'Data project based belum tersedia.')); return w; }
+  const me = own(t), idx = re => t.headers.findIndex(h => re.test(base(h))), val = i => i < 0 ? NaN : num(me.v[i]);
+  const iPB = idx(/^nilai akhir project based/), iTB = idx(/^nilai akhir tugas besar/), iLR = idx(/^nilai akhir laporan resmi/);
+  w.append(el('div', 'mh', el('h2', '', 'Project Based'), el('div', 'st', el('div', '', el('small', '', 'Nilai akhir project based'), el('b', '', fmt(val(iPB)))))));
+
+  w.append(el('div', 'sec', 'Tugas besar · bobot 30%'));
+  w.append(el('div', 'komp', el('div', 'kh', el('b', '', 'Nilai akhir tugas besar'), el('div', 'kv', fmt(val(iTB))), el('span'), bar(val(iTB)))));
+  t.headers.forEach((h, i) => {
+    if (!/^(use ?case|dfd|erd|flowchart|dbms|pengujian|ux|website|ux website)$/.test(base(h))) return;
+    const v = val(i);
+    w.append(el('div', 'komp', el('div', 'kh', el('span', '', judul(h)), el('div', 'kv', fmt(v)), el('span'), bar(v))));
+  });
+
+  w.append(el('div', 'sec', 'Laporan resmi · bobot 20%'));
+  const iRaw = idx(/^laporan resmi$/), subs = [];
+  t.headers.forEach((h, i) => { if (/^(format & kerapian|kualitas pembahasan|tata tulis)/.test(base(h))) subs.push({ label: judul(h), w: bobot(h), i }); });
+  w.append(komp({ label: 'Laporan resmi', w: NaN, i: iRaw >= 0 ? iRaw : iLR, subs }, me));
+  if (iLR >= 0) w.append(el('div', 'row', el('span', 'mute', 'Nilai akhir laporan resmi (sudah dikali bobot)'), el('div', 'r big', fmt(val(iLR)))));
+  return w;
+}
+
+function rekapView() {
+  const t = D.tabs.rekapModul, w = el('div', 'mod');
+  if (!t) { w.append(el('p', 'empty', 'Data rekap modul belum tersedia.')); return w; }
+  const me = own(t), G = { kuis: {}, tugas: {} }, tot = {}; let g = '';
+  t.headers.forEach((h, i) => {
+    const b = base(h);
+    if (/^nilai keseluruhan kuis/.test(b)) { g = 'kuis'; tot.kuis = i; }
+    else if (/^nilai keseluruhan tugas/.test(b)) { g = 'tugas'; tot.tugas = i; }
+    else { const m = b.match(/^modul\s*(\d+)/); if (m && g) G[g][+m[1]] = i; }
+  });
+  w.append(el('div', 'mh', el('h2', '', 'Rekap Modul'), el('div', 'st',
+    tot.kuis != null ? el('div', '', el('small', '', 'Keseluruhan kuis'), el('b', '', fmt(num(me.v[tot.kuis])))) : null,
+    tot.tugas != null ? el('div', '', el('small', '', 'Keseluruhan tugas'), el('b', '', fmt(num(me.v[tot.tugas])))) : null)));
+  const ctl = el('div', 'ctl'), list = el('div');
+  const seg = (opts, key) => {
+    const s = el('div', 'seg');
+    opts.forEach(o => { const b = el('button', '', o[1]); b.type = 'button'; b.setAttribute('aria-pressed', rm[key] === o[0]); b.onclick = () => { rm[key] = o[0]; [...s.children].forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); }; s.append(b); });
+    return s;
+  };
+  ctl.append(seg([['kuis', 'Kuis'], ['tugas', 'Tugas']], 'm'), seg([['urut', 'Urutan modul'], ['baik', 'Terbaik → terendah'], ['buruk', 'Terendah → terbaik']], 's'));
+  function draw() {
+    const items = Object.keys(G[rm.m]).map(n => ({ n: +n, v: num(me.v[G[rm.m][n]]) }));
+    const key = x => isNaN(x.v) ? Infinity : x.v;
+    if (rm.s === 'urut') items.sort((a, b) => a.n - b.n);
+    else if (rm.s === 'baik') items.sort((a, b) => (isNaN(b.v) ? -1 : b.v) - (isNaN(a.v) ? -1 : a.v));
+    else items.sort((a, b) => key(a) - key(b));
+    list.replaceChildren(...items.map((x, i) => el('div', 'rk', el('span', 'no', rm.s === 'urut' ? x.n : i + 1),
+      el('div', '', el('b', '', 'Modul ' + x.n), D.tabs.modul[x.n] ? el('span', 'kw', D.tabs.modul[x.n].name) : null), el('span', 'big', fmt(x.v)), bar(x.v))));
+  }
+  draw(); w.append(el('div', '', ctl), list);
+  return w;
+}
+
+// ---------- navigasi & render ----------
+const JUDUL = { home: 'Beranda', responsi: 'ETS & EAS', project: 'Project Based', rekap: 'Rekap Modul' };
+function nav() {
+  const n = $('nav'); n.replaceChildren();
+  const item = (id, t) => { const b = el('button', 'ni' + (view === id ? ' on' : ''), t); b.onclick = () => { view = id; tampil(); }; return b; };
+  n.append(item('home', 'Beranda'));
+  const sub = el('div', 'sub');
+  for (let a = 1; a <= 9; a++) {
+    const m = ACARA[a], b = el('button', view === 'a' + a ? 'on' : '', 'Acara ' + a, el('small', '', m.length > 1 ? 'Modul ' + m[0] + ' & ' + m[1] : 'Modul ' + m[0]));
+    b.onclick = () => { view = 'a' + a; tampil(); };
+    sub.append(b);
+  }
+  const tog = el('button', 'ni' + (/^a\d$/.test(view) ? ' on' : ''), 'Nilai per Acara ▾');
+  const h = el('div', 'has-sub', tog, sub);
+  tog.onclick = () => h.classList.toggle('open');
+  n.append(h, item('responsi', 'ETS & EAS'), item('project', 'Project Based'), item('rekap', 'Rekap Modul'));
+  const o = el('button', 'ni out', 'Keluar'); o.onclick = keluar; n.append(o);
+}
+
+function tampil() {
+  $('login').hidden = true; $('app').hidden = false; nav();
+  const judulHal = /^a\d$/.test(view) ? 'Acara ' + view.slice(1) : JUDUL[view];
+  const r = el('button', 'ghost', 'Muat ulang'); r.onclick = () => masuk(JSON.parse(sessionStorage.getItem('apsi')), true);
+  const body = view === 'home' ? beranda() : /^a\d$/.test(view) ? acaraView(+view.slice(1)) : view === 'responsi' ? responsiView() : view === 'project' ? projectView() : rekapView();
+  $('main').replaceChildren(el('div', 'top', el('h1', '', judulHal), r), body,
+    el('p', 'mute', 'Data dibaca langsung dari spreadsheet pada ' + new Date(D.updated).toLocaleString('id-ID') + '.'));
+  window.scrollTo(0, 0);
+}
+
+const tersimpan = sessionStorage.getItem('apsi');
+if (tersimpan) masuk(JSON.parse(tersimpan), false);
+</script>
+</body>
 </html>
