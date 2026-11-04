@@ -145,39 +145,68 @@ details.grup>summary{color:var(--blue);font-weight:600;padding:14px 0}
 .srch{width:auto;min-width:220px;border:0;background:#e9ebef;border-radius:999px;padding:8px 16px}
 .hint{font-size:.85em;color:var(--mute);margin-top:16px}
 /* mode asisten */
+.app.as{display:block}
+.app.as aside{display:none}
+.app.as main{max-width:none;padding:0 clamp(12px,1.6vw,28px) 40px}
+.asbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#fff;border-bottom:1px solid var(--line);margin:0 calc(-1*clamp(12px,1.6vw,28px)) 18px;padding:10px clamp(12px,1.6vw,28px)}
+.brand2{font-weight:700;font-size:1.15em;color:var(--od);line-height:1.2}
+.brand2 small{display:block;font-weight:400;font-size:.7em;color:var(--mute)}
+.asnav{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+.asnav button{background:none;border:0;padding:8px 18px;border-radius:999px;font-weight:500;color:var(--mute)}
+.asnav button:hover{background:#f1f3f6}
+.asnav button.on{background:var(--o1);color:#fff;font-weight:600}
+.asr{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.xs{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:20px}
+.xs>div{background:#fff;padding:14px 18px}
+.xs small{display:block;margin-bottom:2px}
+.xs b{font-size:1.5em;font-weight:700;color:var(--navy);line-height:1.2}
+.xgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;min-height:600px;margin-bottom:20px}
+.fillh{position:relative;min-width:0}
+.fillh>.panel{position:absolute;inset:0;display:flex;flex-direction:column}
+.xscr{overflow:auto;flex:1;min-height:0}
+.xrow3{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.xscr2{max-height:340px;overflow:auto}
+.xli{padding:9px 0;border-bottom:1px solid var(--line)}
+.xli small{display:block}
+.xlist{columns:3 340px;column-gap:36px}
+.xrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.xrow small{display:block}
+.xr2{text-align:right}
+.xtag{display:inline-block;font-size:10.5px;font-weight:700;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+.xtag.gugur{background:#fee4e2;color:#b42318}
+.xtag.magang{background:#e0f2fe;color:#0a5c8a}
+.xgm{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:20px}
+.xgm h3{font-size:1em;color:var(--navy);margin:10px 0 8px}
+.xchips{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:10px}
+.xchip{background:#eef2f7;border:0;border-radius:999px;padding:5px 12px;color:var(--navy);font-weight:500}
+.xchip:hover{background:#e0e7f0}
+.xas{display:flex;gap:10px;align-items:center}
+.xas .foto{width:38px;height:38px;font-size:.8em}
 .tabsb{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:18px}
 .tabsb button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:10px 16px;font-weight:500;color:var(--mute)}
 .tabsb button[aria-selected=true]{color:var(--od);border-color:var(--o1);font-weight:600}
-.dgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:22px;align-items:start}
-.stack{display:grid;gap:22px;min-width:0}
+.pjs{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
 .tool{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:4px 0 12px}
-.ck{display:flex;gap:6px;align-items:center;font-weight:500;margin:0;font-size:.92em}
-.ck input{width:auto}
+.xq{width:min(100%,240px);border-radius:999px;background:#e9ebef;border:0;padding:8px 14px}
 .dt{width:100%;border-collapse:collapse;font-size:.92em}
-.dt th{color:var(--mute);font-weight:500;padding:10px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
-.dt td{padding:10px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.dt th{color:var(--mute);font-weight:500;padding:10px 8px;text-align:right;border-bottom:1px solid var(--line);vertical-align:bottom}
+.dt td{padding:10px 8px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
 .dt .l{text-align:left}
 .dt .b{font-weight:700}
-.dt .lo{color:#b42318;font-weight:600}
-.dt .hi{color:#067647;font-weight:600}
+.dt th small{display:block;font-weight:400}
+.dt th.op{background:#fff8f3}
+.dt th.sbh,.dt td.sbc{background:#fffaf5}
+.dt tr.gug td{color:var(--mute);background:#fafafa}
 .dt tfoot td{font-weight:700;border-top:2px solid var(--line);border-bottom:0;color:var(--navy)}
-.dt .lnk{color:var(--blue);text-decoration:underline}
-.ins{list-style:none;margin:0;padding:0 0 6px}
-.ins li{display:grid;grid-template-columns:10px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.93em}
-.ins li:last-child{border:0}
-.ins i{width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--blue)}
-.ins .good i{background:#12b76a}
-.ins .warn i{background:#f79009}
-.ins .risk i{background:#d92d20}
-.dist .r{display:grid;grid-template-columns:28px 1fr 84px;gap:10px;align-items:center;padding:7px 0}
-.dist .t{height:10px;background:#e9ebef;border-radius:6px;overflow:hidden}
-.dist i{display:block;height:100%;background:var(--blue)}
-.pjs{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-.pw{padding:10px 0;border-bottom:1px solid var(--line)}
-.pw:last-child{border:0}
-.pw small{display:block;margin-top:3px}
-.sub.big{max-height:70vh;overflow:auto;width:260px}
-@media(max-width:1280px){.dgrid{grid-template-columns:minmax(0,1fr)}}
+.dt .lnk{color:var(--blue);text-decoration:underline;text-align:left}
+.xnm>div{padding:2px 0;white-space:nowrap}
+.xtg{background:none;border:0;padding:0;font:inherit;color:var(--navy);font-weight:600;cursor:pointer;white-space:nowrap}
+@media(max-width:1100px){
+ .xgrid,.xrow3{grid-template-columns:minmax(0,1fr)}
+ .xgrid{min-height:0}
+ .fillh{position:static}
+ .fillh>.panel{position:static;max-height:560px}
+}
 @media(min-width:1180px){
  .dua{display:grid;grid-template-columns:1fr 1fr;column-gap:44px;align-items:start}
  .dua>.sek+.sek{border-top:0;margin-top:0}
@@ -226,7 +255,7 @@ details.grup>summary{color:var(--blue);font-weight:600;padding:14px 0}
       <label for="nama">Nama lengkap</label><input id="nama" required>
       <p class="err" id="err" role="alert"></p>
       <button class="go" id="go" type="submit">Lihat nilai</button>
-      <p class="hint">Tunggu guys, agak lama emank -YA.</p>
+      <p class="hint">Pernah gak ready?.</p>
     </form>
   </div>
 </div>
@@ -299,11 +328,11 @@ async function panggil(c) {
   } catch (e) {
     throw new Error(e.name === 'AbortError'
       ? 'Server terlalu lama merespons (lebih dari 60 detik). Coba lagi.'
-      : 'Server tidak bisa dihubungi. Periksa URL Web App di index.html dan pastikan akses deployment "Siapa saja".');
+      : 'Server tidak bisa dihubungi. Lapor kak asisten!');
   } finally { clearTimeout(to); }
   let d;
   try { d = JSON.parse(teks); }
-  catch (e) { throw new Error('Server mengirim halaman, bukan data. Pastikan URL berakhiran /exec, akses "Siapa saja", dan kode Apps Script tidak error.'); }
+  catch (e) { throw new Error('Lapor kak asisten!'); }
   if (d.ok && !d.tabs && d.view !== 'dosen') throw new Error('Backend masih versi lama. Di Apps Script: Deploy, Kelola deployment, Versi baru.');
   return d;
 }
@@ -564,41 +593,54 @@ function rekapView() {
   return w;
 }
 
-// =================== MODE ASISTEN (DOSEN) ===================
-const BATAS = 60;                       // di bawah angka ini dianggap perlu perhatian
+// =================== MODE ASISTEN ===================
 let timer = null;
 const KODE_NIM = {
   '122230048': ['SY', '#1e00ff'], '122230058': ['IN', '#041d56'], '122230074': ['YS', '#6c3303'], '122230090': ['KY', '#2fd0da'],
   '122230093': ['YA', '#ffd966'], '122230096': ['AN', '#c40160'], '122230100': ['AH', '#38761d'], '122230158': ['TZ', '#dd9b9b'],
   '122230195': ['AV', '#c8d9e6'], '122230232': ['AB', '#c7b7f7']
 };
-const TAB_JUDUL = { akhir: 'Peringkat & Nilai Akhir', acara: 'Nilai per Acara', responsi: 'ETS & EAS', project: 'Project Based', rekap: 'Rekap Nilai' };
+const TAB_JUDUL = { akhir: 'Ranking Nilai Akhir', acara: 'Nilai per Acara', responsi: 'ETS & EAS', project: 'Project Based', rekap: 'Rekap Nilai' };
+const ST_OPSI = [['', 'Semua status'], ['aktif', 'Aktif (tanpa gugur)'], ['GUGUR', 'Gugur'], ['MAGANG', 'Magang']];
 
-// ---------- statistik ----------
+// ---------- statistik & util ----------
 const ok = x => typeof x === 'number' && !isNaN(x);
 const arr = a => a.filter(ok);
 const mean = a => { a = arr(a); return a.length ? a.reduce((x, y) => x + y, 0) / a.length : NaN; };
-const sdv = a => { a = arr(a); if (a.length < 2) return NaN; const m = mean(a); return Math.sqrt(a.reduce((s, x) => s + (x - m) * (x - m), 0) / (a.length - 1)); };
-const medv = a => { a = arr(a).sort((x, y) => x - y); if (!a.length) return NaN; const h = a.length >> 1; return a.length % 2 ? a[h] : (a[h - 1] + a[h]) / 2; };
 const minv = a => { a = arr(a); return a.length ? Math.min(...a) : NaN; };
 const maxv = a => { a = arr(a); return a.length ? Math.max(...a) : NaN; };
 const grp = (S, f) => { const m = {}; S.forEach(s => { (m[f(s)] = m[f(s)] || []).push(s); }); return m; };
 const nAc = (s, a) => { const v = s.ac[a]; if (!v) return NaN; const k = v.k, t = v.t; return ok(k) && ok(t) ? (k * 10 + t * 20) / 30 : (ok(k) ? k : t); };
-const resetF = () => ({ mode: 'ind', q: '', kel: '', urut: 'kel', ph: false, acara: 1, metric: 'kuis' });
+const kon = (raw, w) => { if (!ok(raw) || !ok(w)) return NaN; return (raw > 5 ? raw : raw / 5 * 100) * w / 100; };
+const kn = k => parseInt(k) || 999;
+const stOk = (s, st) => !st || (st === 'aktif' ? s.st !== 'GUGUR' : s.st === st);
+const cocokQ = (s, q) => !q || s.nama.toLowerCase().includes(q.trim().toLowerCase()) || (s.nim || '').includes(q.trim());
+const resetF = tab => ({ mode: 'ind', q: '', kel: '', st: '', urut: tab === 'akhir' ? 'tinggi' : 'kel', acara: 1, metric: 'kuis', open: {} });
 const bacaT = () => { try { return JSON.parse(sessionStorage.getItem('apsi_t')); } catch (e) { return null; } };
+function assignRank(S, key) {   // peringkat kompetisi; praktikan gugur tidak diperingkat
+  const a = S.filter(s => s.st !== 'GUGUR' && ok(s.akhir)).sort((x, y) => y.akhir - x.akhir);
+  a.forEach(s => { s[key] = 1 + a.findIndex(x => x.akhir === s.akhir); });
+  S.filter(s => s.st === 'GUGUR' || !ok(s.akhir)).forEach(s => { s[key] = NaN; });
+}
+function statPlug(S) {
+  const ak = S.filter(s => s.st !== 'GUGUR').map(s => s.akhir);
+  return { total: S.length, L: S.filter(s => s.jk === 'L').length, P: S.filter(s => s.jk === 'P').length, gugur: S.filter(s => s.st === 'GUGUR').length,
+    magang: S.filter(s => s.st === 'MAGANG').length, kel: new Set(S.map(s => s.kel)).size, rata: mean(ak), max: maxv(ak), min: minv(ak) };
+}
+const pjNama = o => [1, 2].map(n => o.asisten[n] ? o.asisten[n].nama.split(' ')[0] : '').filter(Boolean).join(' & ') || '–';
 
 // ---------- olah data satu plug ----------
 function derive(plug, d) {
-  const T = d.tabs, o = { plug, asisten: d.asisten || {}, tabs: T, S: [] }, map = {};
+  const T = d.tabs, o = { plug, asisten: d.asisten || {}, tabs: T, S: [], by: {} };
   const ix = (t, key) => t.headers.findIndex(h => base(h) === key);
   if (T.rekap) {
     const t = T.rekap, I = {};
     ['ets', 'eas', 'quiz', 'tugas', 'project based', 'poin tambahan', 'nilai awal', 'nilai akhir', 'hakikat'].forEach(k => { I[k] = ix(t, k); });
     const g = (r, k) => I[k] < 0 ? NaN : num(r.v[I[k]]);
     t.rows.forEach(r => {
-      const s = { plug, nim: r.nim, nama: r.nama, kel: r.kel || '-', ets: g(r, 'ets'), eas: g(r, 'eas'), quiz: g(r, 'quiz'), tugas: g(r, 'tugas'), pb: g(r, 'project based'),
-        poin: g(r, 'poin tambahan'), awal: g(r, 'nilai awal'), akhir: g(r, 'nilai akhir'), hk: I.hakikat < 0 ? '' : r.v[I.hakikat], ac: {} };
-      o.S.push(s); map[r.nim] = s;
+      const s = { plug, nim: r.nim, nama: r.nama, kel: r.kel || '-', jk: (r.jk || '').charAt(0).toUpperCase(), st: r.st || '',
+        ets: g(r, 'ets'), eas: g(r, 'eas'), quiz: g(r, 'quiz'), tugas: g(r, 'tugas'), pb: g(r, 'project based'), poin: g(r, 'poin tambahan'), awal: g(r, 'nilai awal'), akhir: g(r, 'nilai akhir'), ac: {} };
+      o.S.push(s); o.by[r.nim] = s;
     });
   }
   const m = T.rekapModul;
@@ -611,207 +653,164 @@ function derive(plug, d) {
       else { const x = b.match(/^modul\s*(\d+)/); if (x && gg) G[gg][+x[1]] = i; }
     });
     m.rows.forEach(r => {
-      const s = map[r.nim]; if (!s) return;
+      const s = o.by[r.nim]; if (!s) return;
       for (let a = 1; a <= 9; a++) {
         const pick = w => { for (const n of ACARA[a]) { if (G[w][n] != null) { const y = num(r.v[G[w][n]]); if (ok(y)) return y; } } return NaN; };
         s.ac[a] = { k: pick('kuis'), t: pick('tugas') };
       }
     });
   }
-  o.aktif = aktifAc(o.S); o.A = statAcara(o.S, o.aktif);
+  assignRank(o.S, 'rank');
+  const akt = o.S.filter(s => s.st !== 'GUGUR'), ak = {};
+  for (let a = 1; a <= 9; a++) ak[a] = akt.length > 0 && akt.filter(s => nAc(s, a) > 0).length / akt.length >= .5;   // acara dianggap sudah berjalan
+  o.aktif = ak;
   return o;
-}
-function aktifAc(S) { const r = {}; for (let a = 1; a <= 9; a++) r[a] = S.length > 0 && S.filter(s => nAc(s, a) > 0).length / S.length >= .5; return r; }
-function statAcara(S, aktif) {
-  const out = [];
-  for (let a = 1; a <= 9; a++) {
-    if (!aktif[a]) continue;
-    out.push({ a, k: mean(S.map(s => s.ac[a] ? s.ac[a].k : NaN)), t: mean(S.map(s => s.ac[a] ? s.ac[a].t : NaN)), n: mean(S.map(s => nAc(s, a))), nol: S.filter(s => !(nAc(s, a) > 0)).length });
-  }
-  return out;
 }
 function acaraLab(list) {
   const out = [];
   for (let a = 1; a <= 9; a++) {
-    const xs = list.filter(o => o.aktif[a]).map(o => ({ k: mean(o.S.map(s => s.ac[a] ? s.ac[a].k : NaN)), t: mean(o.S.map(s => s.ac[a] ? s.ac[a].t : NaN)), n: mean(o.S.map(s => nAc(s, a))), nol: o.S.filter(s => !(nAc(s, a) > 0)).length }));
-    if (xs.length) out.push({ a, plugs: xs.length, k: mean(xs.map(x => x.k)), t: mean(xs.map(x => x.t)), n: mean(xs.map(x => x.n)), nol: xs.reduce((s, x) => s + x.nol, 0) });
+    const xs = list.filter(o => o.aktif[a]).map(o => { const S = o.S.filter(s => s.st !== 'GUGUR'); return { k: mean(S.map(s => s.ac[a] ? s.ac[a].k : NaN)), t: mean(S.map(s => s.ac[a] ? s.ac[a].t : NaN)), n: mean(S.map(s => nAc(s, a))), nol: S.filter(s => !(nAc(s, a) > 0)).length }; });
+    if (xs.length) out.push({ a, k: mean(xs.map(x => x.k)), t: mean(xs.map(x => x.t)), n: mean(xs.map(x => x.n)), nol: xs.reduce((s, x) => s + x.nol, 0) });
   }
   return out;
 }
-function alasan(s, aktif) {
-  const r = [], nol = [], vs = [];
-  Object.keys(aktif).forEach(a => { if (!aktif[a]) return; const v = nAc(s, a); if (!(v > 0)) nol.push(a); else vs.push(v); });
-  if (nol.length) r.push('belum bernilai di Acara ' + nol.join(', '));
-  const av = mean(vs); if (ok(av) && av < BATAS) r.push('rata-rata acara rendah (' + fmt(av) + ')');
-  return r;
-}
-const perhatianPlug = o => o.S.map(s => ({ s, o, r: alasan(s, o.aktif) })).filter(x => x.r.length);
-const pjNama = o => [1, 2].map(n => o.asisten[n] ? o.asisten[n].nama.split(' ')[0] : '').filter(Boolean).join(' & ') || '–';
-const avgS = (s, ak) => { const m = mean(Object.keys(ak).filter(a => ak[a]).map(a => nAc(s, a))); return ok(m) ? m : s.akhir; };
 
-// ---------- analisis otomatis (berbasis aturan, dihitung ulang tiap data dimuat) ----------
-function analisisPlug(o) {
-  const S = o.S, N = S.length, out = [], I = (t, x) => out.push({ t, x });
-  if (!N) { I('warn', 'Data rekap plug ini belum terbaca. Pastikan tab rekap memiliki kolom Nilai Akhir dan Hakikat.'); return out; }
-  const ak = S.map(s => s.akhir), sd = sdv(ak);
-  I('info', `Rata-rata nilai akhir ${fmt(mean(ak))} (median ${fmt(medv(ak))}), rentang ${fmt(minv(ak))}–${fmt(maxv(ak))} dari ${N} praktikan. Sebaran ${sd < 8 ? 'sempit (nilai relatif seragam)' : sd < 15 ? 'sedang' : 'lebar (kemampuan antar praktikan cukup timpang)'} dengan SD ${fmt(sd)}.`);
-  const kosong = [['ETS', 'ets'], ['EAS', 'eas'], ['Project Based', 'pb']].filter(x => S.filter(s => !(s[x[1]] > 0)).length >= N * .5).map(x => x[0]);
-  if (kosong.length) I('warn', `${kosong.join(', ')} belum terisi untuk sebagian besar praktikan, jadi nilai akhir saat ini masih sementara dan akan naik setelah komponen itu dinilai.`);
-  const A = o.A;
-  if (!A.length) I('info', 'Belum ada acara yang memiliki nilai.');
-  else {
-    const so = A.slice().sort((x, y) => y.n - x.n), b = so[0], w = so[so.length - 1];
-    I('info', A.length === 1 || b.n - w.n < 2
-      ? `${A.length} acara sudah bernilai dengan rata-rata ${fmt(mean(A.map(x => x.n)))}${A.length > 1 ? ' (antar acara relatif seragam)' : ''}.`
-      : `${A.length} acara sudah bernilai. Rata-rata tertinggi: Acara ${b.a} (${fmt(b.n)}); terendah: Acara ${w.a} (${fmt(w.n)}) tentang ${JUDUL_ACARA[w.a]}.`);
-    const mk = mean(A.map(x => x.k)), mt = mean(A.map(x => x.t));
-    if (Math.abs(mk - mt) >= 5) I('info', `Rata-rata ${mk > mt ? 'kuis' : 'tugas'} (${fmt(Math.max(mk, mt))}) lebih tinggi daripada ${mk > mt ? 'tugas' : 'kuis'} (${fmt(Math.min(mk, mt))}). Indikasinya ${mk > mt ? 'pemahaman awal cukup baik, tetapi asistensi/laporan masih perlu ditingkatkan' : 'asistensi/laporan lebih kuat daripada penguasaan awal (pretest), sehingga materi pra-praktikum layak diperkuat'}.`);
-    if (A.length >= 4) {
-      const h = A.length >> 1, d = mean(A.slice(h).map(x => x.n)) - mean(A.slice(0, h).map(x => x.n));
-      if (d <= -5) I('warn', `Tren menurun: rata-rata acara terbaru ${fmt(Math.abs(d))} poin lebih rendah daripada acara awal.`);
-      else if (d >= 5) I('good', `Tren membaik: rata-rata acara terbaru ${fmt(d)} poin lebih tinggi daripada acara awal.`);
-    }
-    const z = A.filter(x => x.nol > 0).sort((x, y) => y.nol - x.nol);
-    if (z.length) I('warn', `Praktikan tanpa nilai: ${z.slice(0, 3).map(x => `Acara ${x.a} (${x.nol} orang)`).join(', ')}. Kemungkinan tidak hadir atau belum mengumpulkan; perlu ditindaklanjuti.`);
-  }
-  const G = grp(S, s => s.kel), gs = Object.keys(G).map(k => ({ k, n: mean(G[k].map(s => avgS(s, o.aktif))), sd: sdv(G[k].map(s => avgS(s, o.aktif))) })).filter(x => ok(x.n));
-  if (gs.length >= 2) {
-    gs.sort((x, y) => y.n - x.n);
-    const b = gs[0], w = gs[gs.length - 1];
-    I('info', `Kelompok ${b.k} paling unggul (rata-rata ${fmt(b.n)}), kelompok ${w.k} terendah (${fmt(w.n)}); selisih ${fmt(b.n - w.n)} poin.`);
-    const lebar = gs.filter(x => x.sd >= 15).sort((x, y) => (parseInt(x.k) || 99) - (parseInt(y.k) || 99));
-    if (lebar.length) I('warn', `Kelompok ${lebar.map(x => x.k).join(', ')} memiliki kesenjangan antar anggota (SD hingga ${fmt(Math.max(...lebar.map(x => x.sd)))}); kemungkinan pembagian kerja belum merata.`);
-  }
-  const P = perhatianPlug(o);
-  if (P.length) I(P.length >= N * .3 ? 'risk' : 'warn', `${P.length} praktikan perlu perhatian: ${P.slice(0, 4).map(x => x.s.nama).join(', ')}${P.length > 4 ? ' dan lainnya' : ''}.`);
-  else I('good', 'Tidak ada praktikan yang terdeteksi perlu perhatian khusus.');
-  const top = S.slice().sort((x, y) => (ok(y.akhir) ? y.akhir : -1) - (ok(x.akhir) ? x.akhir : -1)).slice(0, 3);
-  I('good', `Nilai akhir tertinggi saat ini: ${top.map(s => `${s.nama} (${fmt(s.akhir)})`).join(', ')}.`);
-  return out;
-}
-
-function analisisLab(list) {
-  const S = list.flatMap(o => o.S), N = S.length, out = [], I = (t, x) => out.push({ t, x });
-  if (!N) { I('info', 'Menunggu data plug dimuat…'); return out; }
-  const rp = list.filter(o => o.S.length).map(o => ({ p: o.plug, m: mean(o.S.map(s => s.akhir)), sd: sdv(o.S.map(s => s.akhir)) }));
-  I('info', `${N} praktikan di ${rp.length} plug dengan rata-rata nilai akhir ${fmt(mean(S.map(s => s.akhir)))} (median ${fmt(medv(S.map(s => s.akhir)))}).`);
-  if (rp.length >= 2) {
-    rp.sort((x, y) => y.m - x.m);
-    const b = rp[0], w = rp[rp.length - 1], gap = b.m - w.m;
-    I(gap >= 10 ? 'warn' : 'info', `Plug tertinggi: ${b.p} (${fmt(b.m)}), terendah: ${w.p} (${fmt(w.m)}); selisih ${fmt(gap)} poin${gap >= 10 ? '. Selisih cukup besar, bisa jadi akibat perbedaan standar penilaian antar asisten atau kelengkapan data' : ''}.`);
-    const wide = rp.filter(x => x.sd >= 15).map(x => x.p);
-    if (wide.length) I('info', `Sebaran nilai paling lebar di plug ${wide.join(', ')}; kemampuan antar praktikan di plug tersebut timpang.`);
-  }
-  const kosong = [['ETS', 'ets'], ['EAS', 'eas'], ['Project Based', 'pb']].filter(x => S.filter(s => !(s[x[1]] > 0)).length >= N * .5).map(x => x[0]);
-  if (kosong.length) I('warn', `${kosong.join(', ')} belum terisi untuk mayoritas praktikan di seluruh lab; nilai akhir masih bersifat sementara.`);
-  const AL = acaraLab(list);
-  if (AL.length) {
-    const so = AL.slice().sort((x, y) => y.n - x.n), b = so[0], w = so[so.length - 1];
-    if (AL.length > 1 && b.n - w.n >= 2) I('info', `Acara dengan rata-rata tertinggi: Acara ${b.a} (${fmt(b.n)}); terendah: Acara ${w.a} (${fmt(w.n)}), ${JUDUL_ACARA[w.a]}.`);
-    else I('info', `Rata-rata antar acara relatif seragam (sekitar ${fmt(mean(AL.map(x => x.n)))}).`);
-    const z = AL.filter(x => x.nol > 0).sort((x, y) => y.nol - x.nol)[0];
-    if (z) I('warn', `Praktikan tanpa nilai terbanyak di Acara ${z.a} (${z.nol} orang di seluruh plug).`);
-  }
-  const P = list.flatMap(o => perhatianPlug(o));
-  if (P.length) {
-    const per = grp(P, x => x.o.plug), tp = Object.keys(per).sort((x, y) => per[y].length - per[x].length)[0];
-    I(P.length >= N * .25 ? 'risk' : 'warn', `${P.length} praktikan (${Math.round(P.length / N * 100)}%) perlu perhatian; terbanyak di plug ${tp} (${per[tp].length} orang).`);
-  } else I('good', 'Tidak ada praktikan yang terdeteksi perlu perhatian khusus.');
-  const gagal = Object.keys(AS.err);
-  if (gagal.length) I('risk', `Plug ${gagal.join(', ')} gagal dimuat, jadi belum masuk analisis. Coba Muat ulang.`);
-  return out;
-}
-
-// ---------- komponen tampilan ----------
+// ---------- komponen kecil ----------
+const tagSt = s => s.st ? el('span', 'xtag ' + s.st.toLowerCase(), s.st) : null;
+const stripe = items => el('div', 'xs', items.map(x => el('div', '', el('small', '', x[0]), el('b', '', x[1]))));
 function seg(opts, cur, cb) {
   const s = el('div', 'seg');
   opts.forEach(o => { const b = el('button', '', o[1]); b.type = 'button'; b.setAttribute('aria-pressed', cur === o[0]); b.onclick = () => { [...s.children].forEach(x => x.setAttribute('aria-pressed', x === b)); cb(o[0]); }; s.append(b); });
   return s;
 }
-function panelAnalisis(items) {
-  return el('section', 'panel', el('div', 'ph', el('h3', '', 'Analisis Otomatis'), el('small', '', 'Dihitung ulang dari data terbaru')),
-    el('ul', 'ins', items.map(x => el('li', x.t, el('i'), el('span', '', x.x)))));
-}
-function panelHk(S) {
-  const c = {}; S.forEach(s => { const h = s.hk || '–'; c[h] = (c[h] || 0) + 1; });
-  const ks = Object.keys(c).sort(), mxn = Math.max(...ks.map(k => c[k]), 1);
-  return el('section', 'panel', el('div', 'ph', el('h3', '', 'Distribusi Hakikat')),
-    el('div', 'dist', ks.map(k => { const t = el('div', 't'), i = el('i'); i.style.width = c[k] / mxn * 100 + '%'; t.append(i); return el('div', 'r', el('b', '', k), t, el('span', 'n', c[k] + ' · ' + Math.round(c[k] / S.length * 100) + '%')); })));
-}
-function panelPerhatian(items, denganPlug) {
-  const p = el('section', 'panel', el('div', 'ph', el('h3', '', 'Perlu Perhatian'), el('small', '', 'Klik nama untuk membuka dashboard')));
-  if (!items.length) { p.append(el('p', 'empty', 'Tidak ada praktikan yang terdeteksi perlu perhatian.')); return p; }
-  items.forEach(x => { const b = el('button', 'lnk', x.s.nama); b.onclick = () => lihat(x.s.nim, x.s.plug);
-    p.append(el('div', 'pw', b, el('small', '', (denganPlug ? 'Plug ' + x.o.plug + ' · ' : '') + 'Kelompok ' + x.s.kel + ' · ' + x.r.join('; ')))); });
-  return p;
-}
-function bukaPlug(p) { AS.v = 'plug'; AS.plug = p; AS.tab = 'akhir'; AS.f = resetF(); renderAs(); }
+function sel(opts, cur, cb, lab) { const s = el('select', 'sel'); s.setAttribute('aria-label', lab); opts.forEach(o => s.append(new Option(o[1], o[0], false, String(cur) === String(o[0])))); s.onchange = () => cb(s.value); return s; }
+function cari(val, cb) { const q = el('input', 'xq'); q.type = 'search'; q.placeholder = 'Cari nama / NIM'; q.value = val; q.setAttribute('aria-label', 'Cari nama atau NIM'); q.oninput = () => cb(q.value); return q; }
+const btnNama = s => { const b = el('button', 'lnk', s.nama); b.onclick = () => lihat(s.nim, s.plug); return b; };
+function bukaPlug(p) { AS.v = 'plug'; AS.plug = p; AS.tab = 'akhir'; AS.f = resetF('akhir'); renderAs(); }
 
-// ---------- dashboard keseluruhan lab ----------
+// ---------- dashboard ----------
 function panelPlug() {
-  const th = el('tr', '', ['Plug', 'Asisten (PJ)', 'Praktikan', 'Rata-rata', 'Tertinggi', 'Terendah', 'Perhatian'].map((h, i) => el('th', i < 2 ? 'l' : '', h)));
+  const th = el('tr', '', ['Plug', 'Asisten (PJ)', 'Total', 'L', 'P', 'Gugur', 'Magang', 'Rata-rata nilai akhir', 'Tertinggi', 'Terendah'].map((h, i) => el('th', i < 2 ? 'l' : '', h)));
   const tb = AS.plugs.map(p => {
     const o = AS.P[p], b = el('button', 'lnk', 'Plug ' + p); b.onclick = () => bukaPlug(p);
-    if (!o) return el('tr', '', el('td', 'l', b), el('td', 'l mute', AS.err[p] ? 'Gagal dimuat: ' + AS.err[p] : 'Memuat…'), el('td'), el('td'), el('td'), el('td'), el('td'));
-    const ak = o.S.map(s => s.akhir);
-    return el('tr', '', el('td', 'l', b), el('td', 'l', pjNama(o)), el('td', '', o.S.length), el('td', 'b', fmt(mean(ak))), el('td', '', fmt(maxv(ak))), el('td', '', fmt(minv(ak))), el('td', '', perhatianPlug(o).length));
+    if (!o) return el('tr', '', el('td', 'l', b), el('td', 'l mute', AS.err[p] ? 'Gagal dimuat: ' + AS.err[p] : 'Memuat…'), el('td', '', ''), el('td'), el('td'), el('td'), el('td'), el('td'), el('td'), el('td'));
+    const x = statPlug(o.S);
+    return el('tr', '', el('td', 'l', b), el('td', 'l', [1, 2].map(n => o.asisten[n] ? el('div', '', o.asisten[n].nama) : null)), el('td', '', x.total), el('td', '', x.L), el('td', '', x.P), el('td', '', x.gugur), el('td', '', x.magang), el('td', 'b', fmt(x.rata)), el('td', '', fmt(x.max)), el('td', '', fmt(x.min)));
   });
-  return el('section', 'panel', el('div', 'ph', el('h3', '', 'Perbandingan Plug'), el('small', '', 'Klik nama plug untuk detail')), el('div', 'sc', el('table', 'dt', el('thead', '', th), el('tbody', '', tb))));
+  return el('section', 'panel', el('div', 'ph', el('h3', '', 'Perbandingan Plug'), el('small', '', 'Klik nama plug untuk detail · rata-rata = rata-rata nilai akhir praktikan aktif (tanpa gugur)')), el('div', 'sc', el('table', 'dt', el('thead', '', th), el('tbody', '', tb))));
+}
+function panelRankLab(all) {
+  assignRank(all, 'rl');
+  const f = AS.fl, box = el('div', 'xscr');
+  const draw = () => {
+    const rows = all.filter(s => (!f.plug || s.plug === f.plug) && cocokQ(s, f.q) && stOk(s, f.st))
+      .sort((a, b) => (a.st === 'GUGUR') - (b.st === 'GUGUR') || (ok(a.rl) ? a.rl : 1e9) - (ok(b.rl) ? b.rl : 1e9) || a.nama.localeCompare(b.nama));
+    const th = el('tr', '', ['#', 'Nama', 'Plug', 'Kel', 'Nilai akhir'].map((h, i) => el('th', i === 1 ? 'l' : '', h)));
+    const tb = rows.map(s => el('tr', '', el('td', '', ok(s.rl) ? s.rl : '–'), el('td', 'l', btnNama(s), tagSt(s)), el('td', '', s.plug), el('td', '', s.kel), el('td', 'b', fmt(s.akhir))));
+    box.replaceChildren(el('table', 'dt', el('thead', '', th), el('tbody', '', tb)));
+    cnt.textContent = rows.length + ' dari ' + all.length + ' praktikan';
+  };
+  const cnt = el('small', 'mute');
+  const bar = el('div', 'tool', cari(f.q, v => { f.q = v; draw(); }), sel([['', 'Semua plug'], ...AS.plugs.map(p => [p, 'Plug ' + p])], f.plug, v => { f.plug = v; draw(); }, 'Plug'), sel(ST_OPSI, f.st, v => { f.st = v; draw(); }, 'Status'), cnt);
+  draw();
+  return el('div', 'fillh', el('section', 'panel', el('div', 'ph', el('h3', '', 'Ranking Seluruh Praktikan'), el('small', '', 'Berdasarkan nilai akhir · klik nama untuk melihat nilai')), bar, box));
 }
 function panelAcaraLab(list) {
-  const AL = acaraLab(list);
-  const p = el('section', 'panel', el('div', 'ph', el('h3', '', 'Rata-rata per Acara'), el('small', '', 'Hanya acara yang sudah bernilai')));
+  const AL = acaraLab(list), p = el('section', 'panel', el('div', 'ph', el('h3', '', 'Rata-rata per Acara'), el('small', '', 'Acara yang sudah bernilai · praktikan gugur tidak dihitung')));
   if (!AL.length) { p.append(el('p', 'empty', 'Belum ada acara yang bernilai.')); return p; }
   const th = el('tr', '', ['Acara', 'Topik', 'Kuis', 'Tugas', 'Nilai acara', 'Tanpa nilai'].map((h, i) => el('th', i < 2 ? 'l' : '', h)));
   const tb = AL.map(x => el('tr', '', el('td', 'l', 'Acara ' + x.a), el('td', 'l', JUDUL_ACARA[x.a]), el('td', '', fmt(x.k)), el('td', '', fmt(x.t)), el('td', 'b', fmt(x.n)), el('td', '', x.nol)));
   p.append(el('div', 'sc', el('table', 'dt', el('thead', '', th), el('tbody', '', tb))));
   return p;
 }
+function panelStatus(all, st, jd) {
+  const it = all.filter(s => s.st === st).sort((a, b) => a.plug.localeCompare(b.plug) || kn(a.kel) - kn(b.kel) || a.nama.localeCompare(b.nama));
+  const p = el('section', 'panel', el('div', 'ph', el('h3', '', jd + ' (' + it.length + ' orang)')));
+  if (!it.length) { p.append(el('p', 'empty', 'Tidak ada.')); return p; }
+  p.append(el('div', 'xscr2', it.map(s => el('div', 'xli', btnNama(s), el('small', '', 'Plug ' + s.plug + ' · Kelompok ' + s.kel)))));
+  return p;
+}
 function dashView() {
-  const list = Object.values(AS.P).filter(o => o.S.length), S = list.flatMap(o => o.S), w = el('div');
-  const flagged = list.flatMap(o => perhatianPlug(o)).sort((x, y) => y.r.length - x.r.length || x.s.akhir - y.s.akhir);
-  w.append(heroBand('Dashboard Lab', 'Performa Keseluruhan Praktikum APSI', [['Plug termuat', list.length], ['Praktikan', S.length], ['Rata-rata nilai akhir', mean(S.map(s => s.akhir))], ['Perlu perhatian', flagged.length]]));
+  const list = Object.values(AS.P).filter(o => o.S.length), all = list.flatMap(o => o.S), x = statPlug(all), w = el('div');
+  w.append(stripe([['Plug termuat', Object.keys(AS.P).length + ' / ' + AS.plugs.length], ['Total praktikan', x.total], ['Laki-laki', x.L], ['Perempuan', x.P], ['Gugur', x.gugur], ['Magang', x.magang], ['Rata-rata nilai akhir', fmt(x.rata)], ['Tertinggi', fmt(x.max)], ['Terendah', fmt(x.min)]]));
   if (!list.length) { w.append(el('section', 'panel', el('p', 'empty', AS.mem ? 'Memuat data plug…' : 'Belum ada data plug yang bisa dimuat. ' + (Object.values(AS.err)[0] || '')))); return w; }
-  w.append(el('div', 'dgrid', el('div', 'stack', panelPlug(), panelAcaraLab(list)),
-    el('div', 'stack', panelAnalisis(analisisLab(list)), panelHk(S), panelPerhatian(flagged.slice(0, 10), true))));
+  w.append(el('div', 'xgrid', panelPlug(), panelRankLab(all)), el('div', 'xrow3', panelAcaraLab(list), panelStatus(all, 'GUGUR', 'Gugur'), panelStatus(all, 'MAGANG', 'Magang')));
   return w;
 }
 
-// ---------- data tabel per tab ----------
-function susunData(t, cols, extra) {
-  return t.rows.map(r => { const v = {}; cols.forEach(c => { if (c.i != null) v[c.k] = num(r.v[c.i]); }); if (extra) extra(v); return { nama: r.nama, nim: r.nim, kel: r.kel || '-', v, tx: {} }; });
+// ---------- data praktikan & data asisten ----------
+function prakView() {
+  const all = Object.values(AS.P).flatMap(o => o.S), f = AS.fp, box = el('div'), cnt = el('small', 'mute');
+  const draw = () => {
+    const rows = all.filter(s => (!f.plug || s.plug === f.plug) && cocokQ(s, f.q) && stOk(s, f.st)).sort((a, b) => a.plug.localeCompare(b.plug) || kn(a.kel) - kn(b.kel) || a.nama.localeCompare(b.nama));
+    cnt.textContent = rows.length + ' dari ' + all.length + ' praktikan';
+    box.replaceChildren(el('div', 'xlist', rows.map(s => el('div', 'xrow', el('div', '', btnNama(s), tagSt(s), el('small', '', 'NIM ' + s.nim)), el('div', 'xr2', 'Plug ' + s.plug, el('small', '', 'Kelompok ' + s.kel))))));
+  };
+  const bar = el('div', 'tool', cari(f.q, v => { f.q = v; draw(); }), sel([['', 'Semua plug'], ...AS.plugs.map(p => [p, 'Plug ' + p])], f.plug, v => { f.plug = v; draw(); }, 'Plug'), sel(ST_OPSI, f.st, v => { f.st = v; draw(); }, 'Status'), cnt);
+  draw();
+  return el('section', 'panel', el('div', 'ph', el('h3', '', 'Data Praktikan'), el('small', '', 'Nama, NIM, plug, dan kelompok · klik nama untuk melihat nilai')), bar, box);
+}
+function aslabView() {
+  const map = {}, byName = {};
+  (AS.daftar || []).forEach(a => { map[a.nim] = { nama: a.nama, nim: a.nim, plugs: [] }; byName[a.nama.toLowerCase().split(' ').slice(0, 2).join(' ')] = a.nim; });
+  Object.values(AS.P).forEach(o => [1, 2].forEach(n => {
+    const a = o.asisten[n]; if (!a) return;
+    const key = map[a.nim] ? a.nim : byName[a.nama.toLowerCase().split(' ').slice(0, 2).join(' ')] || a.nim || a.nama;
+    if (!map[key]) map[key] = { nama: a.nama, nim: a.nim || '', plugs: [] };
+    map[key].plugs.push({ plug: o.plug, pj: n });
+  }));
+  const rows = Object.values(map).sort((a, b) => a.nama.localeCompare(b.nama));
+  const th = el('tr', '', ['Asisten', 'NIM', 'Jumlah plug', 'Menjadi PJ di'].map((h, i) => el('th', i === 0 || i === 3 ? 'l' : '', h)));
+  const tb = rows.map(a => {
+    a.plugs.sort((x, y) => x.plug.localeCompare(y.plug));
+    return el('tr', '', el('td', 'l', el('div', 'xas', foto({ nama: a.nama, nim: a.nim }), el('b', '', a.nama))), el('td', '', a.nim || '–'), el('td', '', a.plugs.length),
+      el('td', 'l', a.plugs.length ? a.plugs.map(x => { const b = el('button', 'xchip', 'Plug ' + x.plug + ' · PJ ' + x.pj); b.onclick = () => bukaPlug(x.plug); return b; }) : el('span', 'mute', AS.mem ? 'Memuat…' : 'Belum menjadi PJ')));
+  });
+  return el('section', 'panel', el('div', 'ph', el('h3', '', 'Data Asisten'), el('small', '', 'PJ 1 membimbing kelompok 1–3, PJ 2 membimbing kelompok 4 ke atas · klik plug untuk membukanya')), el('div', 'sc', el('table', 'dt', el('thead', '', th), el('tbody', '', tb))));
+}
+
+// ---------- data tabel per tab (sub komponen bisa dibuka) ----------
+function subsOf(m, t) { return m.subs.filter(s => t.rows.some(r => r.v[s.i] !== '')).map(s => ({ k: 'u' + s.i, h: s.label, w: s.w, i: s.i })); }
+function susunData(o, t, cols, extra) {
+  return t.rows.map(r => {
+    const v = {};
+    cols.forEach(c => { if (c.i != null) v[c.k] = num(r.v[c.i]); (c.subs || []).forEach(s => { v[s.k] = kon(num(r.v[s.i]), s.w); }); });
+    if (extra) extra(v);
+    return { nama: r.nama, nim: r.nim, kel: r.kel || '-', st: (o.by[r.nim] || {}).st || '', plug: o.plug, v, tx: {} };
+  });
 }
 function dataAkhir(o) {
-  const cols = [['ets', 'ETS'], ['eas', 'EAS'], ['quiz', 'Quiz'], ['tugas', 'Tugas'], ['pb', 'Project Based'], ['poin', 'Poin +'], ['akhir', 'Nilai Akhir']].map(x => ({ k: x[0], h: x[1] }));
-  cols.push({ k: 'hk', h: 'Hakikat', txt: true });
-  return { cols, main: 'akhir', rows: o.S.map(s => ({ nama: s.nama, nim: s.nim, kel: s.kel, v: { ets: s.ets, eas: s.eas, quiz: s.quiz, tugas: s.tugas, pb: s.pb, poin: s.poin, akhir: s.akhir }, tx: { hk: s.hk } })) };
+  const cols = [{ k: 'rank', h: '#', txt: true }, ...[['ets', 'ETS'], ['eas', 'EAS'], ['quiz', 'Quiz'], ['tugas', 'Tugas'], ['pb', 'Project Based'], ['poin', 'Poin +'], ['akhir', 'Nilai Akhir']].map(x => ({ k: x[0], h: x[1] }))];
+  return { cols, main: 'akhir', rows: o.S.map(s => ({ nama: s.nama, nim: s.nim, kel: s.kel, st: s.st, plug: o.plug, v: { ets: s.ets, eas: s.eas, quiz: s.quiz, tugas: s.tugas, pb: s.pb, poin: s.poin, akhir: s.akhir }, tx: { rank: ok(s.rank) ? s.rank : '–' } })) };
 }
 function dataAcara(o, a) {
   let best = null, sk = -1;
   ACARA[a].forEach(n => { const t = o.tabs.modul[n]; if (!t) return; const s = t.rows.reduce((c, r) => c + r.v.filter(x => x !== '').length, 0); if (s > sk) { sk = s; best = n; } });
   const t = best && o.tabs.modul[best]; if (!t) return null;
   const K = parseKomp(t, /^(pretest|tugas modul|asistensi|laporan sementara)/, /^(nilai akhir (quiz|tugas)|catatan)/);
-  const cols = K.mains.map(m => ({ k: 'm' + m.i, h: m.label, i: m.i })), q = K.extra['nilai akhir quiz'], g = K.extra['nilai akhir tugas'];
+  const cols = K.mains.map(m => ({ k: 'm' + m.i, h: m.label, i: m.i, subs: subsOf(m, t) })), q = K.extra['nilai akhir quiz'], g = K.extra['nilai akhir tugas'];
   if (q != null) cols.push({ k: 'kuis', h: 'Kuis', i: q });
   if (g != null) cols.push({ k: 'tugas', h: 'Tugas', i: g });
   cols.push({ k: 'nilai', h: 'Nilai acara' });
-  const rows = susunData(t, cols, v => { const k = v.kuis, tg = v.tugas; v.nilai = ok(k) && ok(tg) ? (k * 10 + tg * 20) / 30 : (ok(k) ? k : tg); });
+  const rows = susunData(o, t, cols, v => { const k = v.kuis, tg = v.tugas; v.nilai = ok(k) && ok(tg) ? (k * 10 + tg * 20) / 30 : (ok(k) ? k : tg); });
   return { cols, rows, main: 'nilai', info: 'Acara ' + a + ' · ' + JUDUL_ACARA[a] + ' (data Modul ' + best + ')' };
 }
 function dataResponsi(o) {
   const t = o.tabs.responsi; if (!t) return null;
-  const K = parseKomp(t, /^(responsi tulis|presentasi)/, /^catatan/), cols = [], mk = [];
-  K.mains.forEach(m => { cols.push({ k: 'm' + m.i, h: m.label, i: m.i }); mk.push('m' + m.i); m.subs.forEach(s => cols.push({ k: 's' + s.i, h: s.label + ' (skor)', i: s.i })); });
+  const K = parseKomp(t, /^(responsi tulis|presentasi)/, /^catatan/), cols = K.mains.map(m => ({ k: 'm' + m.i, h: m.label, i: m.i, subs: subsOf(m, t) }));
   cols.push({ k: 'nilai', h: 'Rata-rata ETS & EAS' });
-  return { cols, main: 'nilai', rows: susunData(t, cols, v => { v.nilai = mean(mk.map(k => v[k])); }) };
+  return { cols, main: 'nilai', rows: susunData(o, t, cols, v => { v.nilai = mean(K.mains.map(m => v['m' + m.i])); }) };
 }
 function dataProject(o) {
   const t = o.tabs.project; if (!t) return null;
-  const cols = [], items = /^(use ?case|dfd|erd|flowchart|dbms|pengujian|ux|website|ux website)$/;
+  const cols = [], items = /^(use ?case|dfd|erd|flowchart|dbms|pengujian|ux|website|ux website)$/, ix = re => t.headers.findIndex(x => re.test(base(x)));
   t.headers.forEach((h, i) => { if (items.test(base(h))) cols.push({ k: 'i' + i, h: judul(h), i }); });
-  const add = (re, h, k) => { const i = t.headers.findIndex(x => re.test(base(x))); if (i >= 0) cols.push({ k, h, i }); };
-  add(/^nilai akhir tugas besar/, 'Tugas Besar', 'tb'); add(/^nilai akhir laporan resmi/, 'Laporan Resmi', 'lr'); add(/^nilai akhir project based/, 'Project Based', 'pb');
-  return { cols, main: 'pb', rows: susunData(t, cols) };
+  const subs = []; t.headers.forEach((h, i) => { if (/^(format & kerapian|kualitas pembahasan|tata tulis)/.test(base(h)) && t.rows.some(r => r.v[i] !== '')) subs.push({ k: 'u' + i, h: judul(h), w: bobot(h), i }); });
+  const iTB = ix(/^nilai akhir tugas besar/), iLR = ix(/^nilai akhir laporan resmi/), iRaw = ix(/^laporan resmi$/), iPB = ix(/^nilai akhir project based/);
+  if (iTB >= 0) cols.push({ k: 'tb', h: 'Tugas Besar', i: iTB });
+  if (iLR >= 0 || iRaw >= 0) cols.push({ k: 'lr', h: 'Laporan Resmi', i: iRaw >= 0 ? iRaw : iLR, subs });
+  if (iPB >= 0) cols.push({ k: 'pb', h: 'Project Based', i: iPB });
+  return { cols, main: 'pb', rows: susunData(o, t, cols) };
 }
 function dataRekap(o, metric) {
   const t = o.tabs.rekapModul; if (!t) return null;
@@ -828,7 +827,7 @@ function dataRekap(o, metric) {
   const rows = t.rows.map(r => {
     const v = {};
     cols.forEach(c => { if (c.ia) { let y = NaN; c.ia.forEach(i => { if (!ok(y)) y = num(r.v[i]); }); v[c.k] = y; } else if (c.i != null) v[c.k] = num(r.v[c.i]); });
-    return { nama: r.nama, nim: r.nim, kel: r.kel || '-', v, tx: {} };
+    return { nama: r.nama, nim: r.nim, kel: r.kel || '-', st: (o.by[r.nim] || {}).st || '', plug: o.plug, v, tx: {} };
   });
   return { cols, rows, main: 'tot', info: 'Nilai ' + metric + ' per acara' };
 }
@@ -836,46 +835,53 @@ function dataFor(o, tab, f) {
   return tab === 'akhir' ? dataAkhir(o) : tab === 'acara' ? dataAcara(o, f.acara) : tab === 'responsi' ? dataResponsi(o) : tab === 'project' ? dataProject(o) : dataRekap(o, f.metric);
 }
 
-// ---------- tabel dengan filter (per kelompok / per individu) ----------
-function tabel(Dd, f, o) {
+// ---------- tabel dengan filter: per kelompok / per individu ----------
+function tabel(Dd, f, o, redraw) {
   if (!Dd) return el('p', 'empty', 'Data belum tersedia untuk bagian ini.');
-  let rows = Dd.rows.slice(); const q = f.q.trim().toLowerCase(), mk = Dd.main, total = rows.length;
-  if (q) rows = rows.filter(r => r.nama.toLowerCase().includes(q));
-  if (f.kel) rows = rows.filter(r => r.kel === f.kel);
-  const km = f.mode === 'kel';
+  const km = f.mode === 'kel', mk = Dd.main, total = Dd.rows.length;
+  const cols = []; Dd.cols.forEach(c => { if (c.k === 'rank' && km) return; cols.push(c); if (c.subs && f.open[c.k]) c.subs.forEach(s => cols.push(Object.assign({}, s, { sub: true }))); });
+  const keys = []; Dd.cols.forEach(c => { keys.push(c); (c.subs || []).forEach(s => keys.push(s)); });
+  let rows = Dd.rows.filter(r => cocokQ(r, f.q) && (!f.kel || r.kel === f.kel) && stOk(r, f.st));
   if (km) {
     const g = grp(rows, r => r.kel);
-    rows = Object.keys(g).map(k => { const m = g[k], v = {}; Dd.cols.forEach(c => { v[c.k] = c.txt ? NaN : mean(m.map(r => r.v[c.k])); }); return { nama: m.map(r => r.nama).join(', '), kel: k, v, tx: {} }; });
+    rows = Object.keys(g).map(k => {
+      const m = g[k], pakai = m.filter(r => r.st !== 'GUGUR'), v = {}, src = pakai.length ? pakai : m;
+      keys.forEach(c => { v[c.k] = c.txt ? NaN : mean(src.map(r => r.v[c.k])); });
+      return { kel: k, st: '', ang: m, v, tx: {} };
+    });
   }
-  if (f.ph) rows = rows.filter(r => !(r.v[mk] >= BATAS));
-  const kn = r => parseInt(r.kel) || 999, mv = r => ok(r.v[mk]) ? r.v[mk] : -1;
-  rows.sort(f.urut === 'nama' ? (a, b) => a.nama.localeCompare(b.nama) : f.urut === 'tinggi' ? (a, b) => mv(b) - mv(a) : f.urut === 'rendah' ? (a, b) => mv(a) - mv(b) : (a, b) => kn(a) - kn(b) || a.nama.localeCompare(b.nama));
-  const mx = {}; Dd.cols.forEach(c => { mx[c.k] = maxv(Dd.rows.map(r => r.v[c.k])); });
-  const cls = (c, v) => (!ok(v) || c.txt || !(mx[c.k] > 5)) ? '' : v < BATAS ? 'lo' : v >= 85 ? 'hi' : '';
-  const th = el('tr', '', km ? [el('th', 'l', 'Kel'), el('th', 'l', 'Anggota')] : [el('th', 'l', 'Nama'), el('th', 'l', 'Kel')], Dd.cols.map(c => el('th', '', c.h)));
+  const mv = r => ok(r.v[mk]) ? r.v[mk] : -1, gug = r => r.st === 'GUGUR' ? 1 : 0, nm = r => km ? '' : r.nama;
+  const urut = f.urut === 'nama' ? (a, b) => nm(a).localeCompare(nm(b)) : f.urut === 'tinggi' ? (a, b) => mv(b) - mv(a) : f.urut === 'rendah' ? (a, b) => mv(a) - mv(b) : (a, b) => kn(a.kel) - kn(b.kel) || nm(a).localeCompare(nm(b));
+  rows.sort((a, b) => gug(a) - gug(b) || urut(a, b));
+  const head = c => {
+    if (c.subs && c.subs.length) {
+      const b = el('button', 'xtg', (f.open[c.k] ? '▾ ' : '▸ ') + c.h); b.type = 'button'; b.title = 'Klik untuk ' + (f.open[c.k] ? 'menyembunyikan' : 'menampilkan') + ' sub komponen';
+      b.onclick = () => { f.open[c.k] = !f.open[c.k]; redraw(); };
+      return el('th', f.open[c.k] ? 'op' : '', b);
+    }
+    return el('th', c.sub ? 'sbh' : '', c.h, c.sub && ok(c.w) ? el('small', '', 'bobot ' + fmt(c.w) + '%') : null);
+  };
+  const th = el('tr', '', km ? [el('th', 'l', 'Kel'), el('th', 'l', 'Anggota')] : [el('th', 'l', 'Nama'), el('th', 'l', 'Kel')], cols.map(head));
   const tb = rows.map(r => {
-    let first;
-    if (km) first = [el('td', 'l', r.kel), el('td', 'l', r.nama)];
-    else { const b = el('button', 'lnk', r.nama); b.onclick = () => lihat(r.nim, o.plug); first = [el('td', 'l', b), el('td', 'l', r.kel)]; }
-    return el('tr', '', first, Dd.cols.map(c => el('td', cls(c, r.v[c.k]), c.txt ? (r.tx[c.k] || '–') : fmt(r.v[c.k]))));
+    const first = km ? [el('td', 'l', r.kel), el('td', 'l', el('div', 'xnm', r.ang.map(a => el('div', '', btnNama({ nama: a.nama, nim: a.nim, plug: o.plug }), tagSt(a)))))]
+      : [el('td', 'l', btnNama(r), tagSt(r)), el('td', 'l', r.kel)];
+    return el('tr', r.st === 'GUGUR' ? 'gug' : '', first, cols.map(c => el('td', c.sub ? 'sbc' : '', c.txt ? (r.tx[c.k] || '') : fmt(r.v[c.k]))));
   });
-  const ft = el('td', 'l', 'Rata-rata (' + rows.length + ')'); ft.colSpan = 2;
-  const foot = el('tfoot', '', el('tr', '', ft, Dd.cols.map(c => el('td', '', c.txt ? '' : fmt(mean(rows.map(r => r.v[c.k])))))));
-  return el('div', '', el('p', 'cat', (km ? rows.length + ' kelompok' : rows.length + ' dari ' + total + ' praktikan') + (Dd.info ? ' · ' + Dd.info : '') + (km ? '' : ' · klik nama untuk membuka dashboard praktikan')),
-    el('div', 'sc', el('table', 'dt', el('thead', '', th), el('tbody', '', tb), rows.length ? foot : null)));
+  const aktif = rows.filter(r => r.st !== 'GUGUR'), ft = el('td', 'l', 'Rata-rata (' + aktif.length + ')'); ft.colSpan = 2;
+  const foot = el('tfoot', '', el('tr', '', ft, cols.map(c => el('td', '', c.txt ? '' : fmt(mean(aktif.map(r => r.v[c.k])))))));
+  return el('div', '', el('p', 'cat', (km ? rows.length + ' kelompok' : rows.length + ' dari ' + total + ' praktikan') + (Dd.info ? ' · ' + Dd.info : '') + ' · klik nama untuk melihat nilai' + (cols.some(c => c.subs && c.subs.length) ? ' · klik judul kolom bertanda ▸ untuk melihat sub komponen' : '')),
+    el('div', 'sc', el('table', 'dt', el('thead', '', th), el('tbody', '', tb), aktif.length ? foot : null)));
 }
 function panelTab(o, tab) {
   const f = AS.f, tw = el('div'), bar = el('div', 'tool');
-  const draw = () => tw.replaceChildren(tabel(dataFor(o, tab, f), f, o));
-  if (tab === 'acara') { const s = el('select', 'sel'); s.setAttribute('aria-label', 'Acara'); for (let a = 1; a <= 9; a++) s.append(new Option('Acara ' + a + ' · ' + JUDUL_ACARA[a], a, false, f.acara === a)); s.onchange = () => { f.acara = +s.value; draw(); }; bar.append(s); }
+  const draw = () => tw.replaceChildren(tabel(dataFor(o, tab, f), f, o, draw));
+  if (tab === 'acara') bar.append(sel(Object.keys(JUDUL_ACARA).map(a => [a, 'Acara ' + a + ' · ' + JUDUL_ACARA[a]]), f.acara, v => { f.acara = +v; draw(); }, 'Acara'));
   if (tab === 'rekap') bar.append(seg([['kuis', 'Kuis'], ['tugas', 'Tugas']], f.metric, v => { f.metric = v; draw(); }));
-  bar.append(seg([['kel', 'Per kelompok'], ['ind', 'Per individu']], f.mode, v => { f.mode = v; draw(); }));
-  const q = el('input', 'srch'); q.type = 'search'; q.placeholder = 'Cari nama'; q.value = f.q; q.setAttribute('aria-label', 'Cari nama'); q.oninput = () => { f.q = q.value; draw(); };
-  const ks = [...new Set(o.S.map(s => s.kel))].sort((a, b) => (parseInt(a) || 99) - (parseInt(b) || 99));
-  const k = el('select', 'sel'); k.setAttribute('aria-label', 'Kelompok'); k.append(new Option('Semua kelompok', '', false, !f.kel)); ks.forEach(x => k.append(new Option('Kelompok ' + x, x, false, f.kel === x))); k.onchange = () => { f.kel = k.value; draw(); };
-  const u = el('select', 'sel'); u.setAttribute('aria-label', 'Urutan'); [['kel', 'Urut kelompok'], ['nama', 'Nama A–Z'], ['tinggi', 'Nilai tertinggi'], ['rendah', 'Nilai terendah']].forEach(x => u.append(new Option(x[1], x[0], false, f.urut === x[0]))); u.onchange = () => { f.urut = u.value; draw(); };
-  const ck = el('label', 'ck'), cb = el('input'); cb.type = 'checkbox'; cb.checked = f.ph; cb.onchange = () => { f.ph = cb.checked; draw(); }; ck.append(cb, 'Perlu perhatian (< ' + BATAS + ')');
-  bar.append(q, k, u, ck); draw();
+  bar.append(seg([['kel', 'Per kelompok'], ['ind', 'Per individu']], f.mode, v => { f.mode = v; draw(); }), cari(f.q, v => { f.q = v; draw(); }));
+  const ks = [...new Set(o.S.map(s => s.kel))].sort((a, b) => kn(a) - kn(b));
+  bar.append(sel([['', 'Semua kelompok'], ...ks.map(k => [k, 'Kelompok ' + k])], f.kel, v => { f.kel = v; draw(); }, 'Kelompok'), sel(ST_OPSI, f.st, v => { f.st = v; draw(); }, 'Status'),
+    sel([['kel', 'Urut kelompok'], ['nama', 'Nama A–Z'], ['tinggi', 'Nilai tertinggi'], ['rendah', 'Nilai terendah']], f.urut, v => { f.urut = v; draw(); }, 'Urutan'));
+  draw();
   return el('section', 'panel', el('div', 'ph', el('h3', '', TAB_JUDUL[tab])), bar, tw);
 }
 
@@ -883,15 +889,16 @@ function panelTab(o, tab) {
 function plugView() {
   const o = AS.P[AS.plug], w = el('div');
   if (!o) { w.append(el('section', 'panel', el('p', 'empty', AS.err[AS.plug] ? 'Gagal memuat Plug ' + AS.plug + ': ' + AS.err[AS.plug] : 'Memuat data Plug ' + AS.plug + '…'))); return w; }
-  const kels = [...new Set(o.S.map(s => s.kel))], K = kels.length;
+  const x = statPlug(o.S), K = x.kel;
   const pill = n => { const a = o.asisten[n]; if (!a) return null; const r = n === 1 ? 'Kelompok 1–' + Math.min(3, K) : (K >= 4 ? 'Kelompok 4–' + K : ''); return el('div', 'asisten', foto(a), el('div', '', el('small', '', 'PJ ' + n + (r ? ' · ' + r : '')), el('b', '', a.nama))); };
-  w.append(el('section', 'hero', el('div', '', el('p', '', 'Penanggung jawab'), el('h2', '', 'Plug ' + o.plug), el('div', 'pjs', pill(1), pill(2))),
-    el('div', 'hs', [['Praktikan', o.S.length], ['Kelompok', K], ['Rata-rata nilai akhir', mean(o.S.map(s => s.akhir))]].map(s => el('div', '', el('small', '', s[0]), el('b', '', fmt(s[1])))))));
+  const back = el('button', 'ghost', '← Kembali ke Dashboard'); back.onclick = () => { AS.v = 'dash'; renderAs(); };
+  w.append(el('section', 'hero', el('div', '', el('p', '', 'Penanggung jawab'), el('h2', '', 'Plug ' + o.plug), el('div', 'pjs', pill(1), pill(2))), back));
+  w.append(stripe([['Total praktikan', x.total], ['Laki-laki', x.L], ['Perempuan', x.P], ['Gugur', x.gugur], ['Magang', x.magang], ['Kelompok', x.kel], ['Rata-rata nilai akhir', fmt(x.rata)], ['Tertinggi', fmt(x.max)], ['Terendah', fmt(x.min)]]));
+  const gm = [['GUGUR', 'Gugur'], ['MAGANG', 'Magang']].map(z => ({ z, it: o.S.filter(s => s.st === z[0]) })).filter(g => g.it.length);
+  if (gm.length) w.append(el('section', 'panel xgm', gm.map(g => el('div', '', el('h3', '', g.z[1] + ' (' + g.it.length + ' orang)'), el('div', 'xchips', g.it.map(s => { const b = el('button', 'xchip', s.nama + ' · Kel ' + s.kel); b.onclick = () => lihat(s.nim, s.plug); return b; }))))));
   const tabs = el('div', 'tabsb'); tabs.setAttribute('role', 'tablist');
-  Object.keys(TAB_JUDUL).forEach(id => { const b = el('button', '', TAB_JUDUL[id]); b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', AS.tab === id); b.onclick = () => { AS.tab = id; AS.f = Object.assign(resetF(), { mode: AS.f.mode }); renderMainAs(); }; tabs.append(b); });
-  w.append(tabs);
-  if (AS.tab === 'akhir') w.append(el('div', 'dgrid', panelTab(o, 'akhir'), el('div', 'stack', panelAnalisis(analisisPlug(o)), panelHk(o.S), panelPerhatian(perhatianPlug(o).sort((x, y) => y.r.length - x.r.length), false))));
-  else w.append(panelTab(o, AS.tab));
+  Object.keys(TAB_JUDUL).forEach(id => { const b = el('button', '', TAB_JUDUL[id]); b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', AS.tab === id); b.onclick = () => { AS.tab = id; AS.f = Object.assign(resetF(id), { mode: AS.f.mode }); renderMainAs(); }; tabs.append(b); });
+  w.append(tabs, panelTab(o, AS.tab));
   return w;
 }
 
@@ -900,32 +907,22 @@ function progres() {
   const e = $('prog'); if (!e || !AS) return;
   e.textContent = AS.mem ? 'Memuat data plug… ' + AS.sel + '/' + AS.tot : (AS.upd ? 'Diperbarui ' + new Date(AS.upd).toLocaleTimeString('id-ID') : '');
 }
-function setAuto() { clearInterval(timer); if (AS && AS.auto) timer = setInterval(() => { if (AS && !AS.mem && !D) muatSemua(); }, 300000); }
 function topAs() {
-  const r = el('button', 'ghost', 'Muat ulang'); r.onclick = () => muatSemua();
-  const ck = el('label', 'ck'), cb = el('input'); cb.type = 'checkbox'; cb.checked = AS.auto; cb.onchange = () => { AS.auto = cb.checked; setAuto(); }; ck.append(cb, 'Perbarui otomatis (5 menit)');
+  const nav = el('nav', 'asnav'), item = (id, t) => { const b = el('button', AS.v === id ? 'on' : '', t); b.onclick = () => { AS.v = id; renderAs(); }; return b; };
+  nav.append(item('dash', 'Dashboard'), item('prak', 'Data Praktikan'), item('aslab', 'Data Asisten'));
   const pr = el('small', 'mute'); pr.id = 'prog';
-  return el('div', 'top', el('h1', '', AS.v === 'dash' ? 'Dashboard Lab' : 'Plug ' + AS.plug, el('span', 'tag', 'Mode asisten')), el('div', 'ctl', pr, ck, r));
-}
-function navAs() {
-  const n = $('nav'); n.replaceChildren();
-  const b1 = el('button', 'ni' + (AS.v === 'dash' ? ' on' : ''), 'Dashboard'); b1.onclick = () => { AS.v = 'dash'; renderAs(); };
-  const sub = el('div', 'sub big');
-  AS.plugs.forEach(p => {
-    const o = AS.P[p], b = el('button', AS.v === 'plug' && AS.plug === p ? 'on' : '', 'Plug ' + p, el('small', '', o ? pjNama(o) : (AS.err[p] ? 'gagal' : '…')));
-    b.onclick = () => bukaPlug(p); sub.append(b);
-  });
-  const tog = el('button', 'ni' + (AS.v === 'plug' ? ' on' : ''), 'Plug ▾'), h = el('div', 'has-sub', tog, sub);
-  tog.onclick = () => h.classList.toggle('open');
-  const o = el('button', 'ni out', 'Keluar'); o.onclick = keluar;
-  n.append(b1, h, o);
+  const r = el('button', 'ghost', 'Muat ulang'); r.onclick = () => muatSemua();
+  const o = el('button', 'ghost', 'Keluar'); o.onclick = keluar;
+  return el('header', 'asbar', el('div', 'brand2', 'APSI', el('small', '', 'Mode asisten · ' + AS.user.nama)), nav, el('div', 'asr', pr, r, o));
 }
 function renderMainAs(keep) {
   if (!AS || D) return;
-  $('main').replaceChildren(topAs(), AS.v === 'dash' ? dashView() : plugView()); progres();
+  $('app').classList.add('as');
+  const body = AS.v === 'dash' ? dashView() : AS.v === 'prak' ? prakView() : AS.v === 'aslab' ? aslabView() : plugView();
+  $('main').replaceChildren(topAs(), body); progres();
   if (!keep) window.scrollTo(0, 0);
 }
-function renderAs(keep) { navAs(); renderMainAs(keep); }
+const renderAs = keep => renderMainAs(keep);
 
 async function muatSemua() {
   if (!AS || AS.mem) return;
@@ -941,7 +938,7 @@ async function muatSemua() {
         A.P[p] = derive(p, d); delete A.err[p];
       } catch (e) { A.err[p] = e.message; }
       A.sel++; progres();
-      if (AS === A && !D && (A.v === 'dash' || A.plug === p)) renderMainAs(true);
+      if (AS === A && !D && (A.v === 'dash' || (A.v === 'plug' && A.plug === p))) renderMainAs(true);
     }
   };
   await Promise.all([worker(), worker(), worker(), worker()]);
@@ -949,9 +946,9 @@ async function muatSemua() {
   if (AS === A && !D) renderAs(true);
 }
 function mulaiAsisten(d, c) {
-  const auto = AS ? AS.auto : false;
-  AS = { cred: c, user: d.user, plugs: d.plugs || [], P: {}, err: {}, v: 'dash', plug: null, tab: 'akhir', f: resetF(), auto, sel: 0, tot: 0, mem: false, upd: null };
-  D = null; sessionStorage.removeItem('apsi_t'); setAuto(); tampil(); muatSemua();
+  AS = { cred: c, user: d.user, plugs: d.plugs || [], daftar: d.daftarAsisten || [], P: {}, err: {}, v: 'dash', plug: null, tab: 'akhir', f: resetF('akhir'),
+    fl: { q: '', plug: '', st: '' }, fp: { q: '', plug: '', st: '' }, sel: 0, tot: 0, mem: false, upd: null };
+  D = null; sessionStorage.removeItem('apsi_t'); tampil(); muatSemua();
 }
 
 // ---------- buka dashboard seorang praktikan (dari mode asisten) ----------
@@ -976,11 +973,11 @@ function muat() {
 const JUDUL = { home: 'Beranda', responsi: 'ETS & EAS', project: 'Project Based', rekap: 'Rekap Nilai' };
 const isAcara = () => /^a\d$/.test(view);
 function nav() {
-  if (!D) { navAs(); return; }
+  if (!D) return;
   const n = $('nav'); n.replaceChildren();
   const keluarBtn = () => { const o = el('button', 'ni out', 'Keluar'); o.onclick = keluar; return o; };
   const item = (id, t) => { const b = el('button', 'ni' + (view === id ? ' on' : ''), t); b.onclick = () => { view = id; tampil(); }; return b; };
-  if (D.mode === 'asisten') { const b = el('button', 'ni', '← Dashboard Asisten'); b.onclick = kembali; n.append(b); }
+  if (D.mode === 'asisten') { const b = el('button', 'ni', '← Kembali ke Mode Asisten'); b.onclick = kembali; n.append(b); }
   n.append(item('home', 'Beranda'));
   const sub = el('div', 'sub');
   for (let a = 1; a <= 9; a++) {
@@ -996,10 +993,11 @@ function nav() {
 }
 
 function tampil() {
+  $('app').classList.toggle('as', !D && !!AS);
   $('login').hidden = true; $('app').hidden = false; $('side').classList.remove('open'); $('mbtn').setAttribute('aria-expanded', 'false'); nav();
   if (!D) { renderMainAs(); return; }
   const r = el('button', 'ghost', 'Muat ulang'); r.onclick = muat;
-  const kb = D.mode === 'asisten' ? el('button', 'ghost', '← Dashboard asisten') : null;
+  const kb = D.mode === 'asisten' ? el('button', 'ghost', '← Kembali') : null;
   if (kb) kb.onclick = kembali;
   const body = view === 'home' ? beranda() : isAcara() ? acaraView(+view.slice(1)) : view === 'responsi' ? responsiView() : view === 'project' ? projectView() : rekapView();
   $('main').replaceChildren(el('div', 'top', el('h1', '', isAcara() ? 'Acara ' + view.slice(1) : JUDUL[view], D.mode === 'asisten' ? el('span', 'tag', 'Mode asisten') : null), el('div', 'ctl', kb, r)), body);
